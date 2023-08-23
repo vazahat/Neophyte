@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo2-96x96.png" type="image/x-icon">
+  <meta name="description" content="CopperCube provides a very simple interface to manipulate all aspects of a 3D scene. This page lists all available functions and API.">
+  
+  
+  <title>CopperCube JavaScript API reference</title>
+  <link rel="stylesheet" href="assets/font-awesome-solid/../css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/font-awesome-solid/css/solid.min.css">
+  <link rel="stylesheet" href="assets/dev-icons/css/devicon.min.css">
+  <link rel="stylesheet" href="assets/gov-icons/css/govicons.min.css">
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+
+  
+  
+  <link href="assets/prism_js/prism.css" rel="stylesheet" />
+<script src="assets/prism_js/prism.js"></script>
+</head>
+<body>
+
+<!-- Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126311622-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126311622-1');
+</script>
+
+<!-- /Analytics -->
+
+
+  
+  <section data-bs-version="5.1" class="menu menu3 cid-sGwt1RYLxI" once="menu" id="menu3-sEISNVg1rq-sEISNVg1rq-sGwt1RYLxI-sGwt1RYLxI-11o">
+    
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo2-96x96.png" alt="Neophyte" style="height: 3rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="index.html">NEOPHYTE.CF</a></span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html"><span class="fas fa-fw fa-home mbr-iconfont mbr-iconfont-btn"></span>Home</a></li>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="assets.html"><span class="fas fa-fw fa-store mbr-iconfont mbr-iconfont-btn"></span>Assets</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link link text-black dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" aria-expanded="true"><span class="fas fa-fw fa-chalkboard-teacher mbr-iconfont mbr-iconfont-btn"></span>Tutorials</a><div class="dropdown-menu"><a class="text-black dropdown-item text-primary display-4" href="tutorial.html"><span class="gi gi-fw gi-file-text mbr-iconfont mbr-iconfont-btn"></span>Text Tutorials</a><a class="text-black dropdown-item text-primary display-4" href="JS_script_snippet.html"><span class="devicon-javascript-plain mbr-iconfont mbr-iconfont-btn"></span>Code Snippets</a><a class="text-black dropdown-item text-primary display-4" href="cc_js_ref.html"><span class="devicon-javascript-plain mbr-iconfont mbr-iconfont-btn"></span>API Reference</a></div>
+                    </li></ul>
+                <div class="icons-menu">
+                    <a class="iconfont-wrapper" href="https://discord.gg/RKcq89S7uA" target="_blank">
+                        <span class="p-2 mbr-iconfont socicon-discord socicon"></span>
+                    </a>
+                    <a class="iconfont-wrapper" href="https://www.youtube.com/glitch_velocity?sub_confirmation=1" target="_blank">
+                        <span class="p-2 mbr-iconfont socicon-youtube socicon"></span>
+                    </a>
+                    <a class="iconfont-wrapper" href="https://www.instagram.com/glitchedvelocity/" target="_blank">
+                        <span class="p-2 mbr-iconfont socicon-instagram socicon"></span>
+                    </a>
+                    <a class="iconfont-wrapper" href="https://www.facebook.com/Neophyte.cf" target="_blank">
+                        <span class="p-2 mbr-iconfont socicon-facebook socicon"></span>
+                    </a>
+                    <a class="iconfont-wrapper" href="javascript:OpenModal('Buymeacoffee')">
+                        <span class="p-2 mbr-iconfont mobi-mbri-hot-cup mobi-mbri"></span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+</section>
+
+<section data-bs-version="5.1" class="content4 cid-sKGh4Oluzb" id="content4-11r">
+    
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-md-12 col-lg-10">
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2"><strong>CopperCube JavaScript reference</strong><br><strong>(Under Construction)</strong></h3>
+                <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-7"><strong>Note:- This page is currently&nbsp; being under construction. Information available on this page might not be accurate and complete.</strong><br><strong><br></strong><br>CopperCube provides a very simple interface to manipulate all aspects of a 3D scene. This page lists all available functions.<br>Most of these functions manipulate so called 'scene nodes'. A scene node is nothing more than a 3d object with a position, rotation, scale, its materials and childrens. The name 'scene node' is there because CopperCube is internally using a scene graph to represent the 3d scene.</h4>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section mbr-section--no-padding cid-sKGwHFPJ75" id="witsec-html-block-11v">
+
+
+
+
+
+<!-- Place your own code below -->
+
+<div class="container" style="text-align:left">
+	    <h4>Here is the list of JavaScript functions, each function is marked with icons that represent the platform on which that function will work. Functions marked with icon <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb; size:10px; "></span> will work in Windows client,&nbsp;<span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span> will work in webGL and&nbsp;<span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span> will work in CopperCube Editor. If you don't see a specific icon in front of a function then it means that functions doesn't work on that platform.</h4><br>
+  <table style="border:none;" cellpadding="10">
+    <tbody><tr>
+      <td valign="top">
+        <h3>Scene Node Handling</h3>
+        <a href="#ccbCloneSceneNode" data-toggle="tooltip" data-placement="right" title="Creates a new scene node based on an existing scenenode.">ccbCloneSceneNode</a> &nbsp;<span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" data-toggle="tooltip" data-placement="right" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbGetActiveCamera" data-toggle="tooltip" data-placement="right" title="Returns active Camera.">ccbGetActiveCamera</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbSetActiveCamera" data-toggle="tooltip" data-placement="right" title="Set an active Camera.">ccbSetActiveCamera</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbGetChildSceneNode" data-toggle="tooltip" data-placement="right" title="Returns the child scenenode of a parent node.">ccbGetChildSceneNode</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbGetRootSceneNode" data-toggle="tooltip" data-placement="right" title="Returns the Root scenenode.">ccbGetRootSceneNode</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbGetSceneNodeChildCount" data-toggle="tooltip" data-placement="right" title="Returns the number of children nodes of a scenenode.">ccbGetSceneNodeChildCount</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbGetSceneNodeProperty" data-toggle="tooltip" data-placement="right" title="Returns the value of a scenenode property.">ccbGetSceneNodeProperty</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbSetSceneNodeProperty" data-toggle="tooltip" data-placement="right" title="Set a value to a scenenode property.">ccbSetSceneNodeProperty</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbGetSceneNodeFromName" data-toggle="tooltip" data-placement="right" title="Return an existing scenenode based on its name.">ccbGetSceneNodeFromName</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbGetSceneNodeMaterialCount" data-toggle="tooltip" data-placement="right" title="Returns the number of materials of a scenenode.">ccbGetSceneNodeMaterialCount</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbGetSceneNodeMaterialProperty" data-toggle="tooltip" data-placement="right" title="Returns the value of material property of a scenenode.">ccbGetSceneNodeMaterialProperty</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbSetSceneNodeMaterialProperty" data-toggle="tooltip" data-placement="right" title="Set a value to the material property of a scenenode.">ccbSetSceneNodeMaterialProperty</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbRemoveSceneNode" data-toggle="tooltip" data-placement="right" title="Delete a scenenode.">ccbRemoveSceneNode</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+	    	<a href="#ccbSetSceneNodeParent" data-toggle="tooltip" data-placement="right" title="Set a parent node of a scene node or make a scene node children of another scenenode.">ccbSetSceneNodeParent</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbSetSceneNodePositionWithoutCollision" data-toggle="tooltip" data-placement="right" title="Set a position of scenenode without collision even if collide when moved behavior is attached.">ccbSetSceneNodePositionWithoutCollision</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <br>
+
+        <h3>Events</h3><a href="#ccbRegisterKeyDownEvent">ccbRegisterKeyDownEvent</a><br>
+        <a href="#ccbRegisterKeyUpEvent">ccbRegisterKeyUpEvent</a><br>
+        <a href="#ccbRegisterMouseDownEvent">ccbRegisterMouseDownEvent</a><br>
+        <a href="#ccbRegisterMouseUpEvent">ccbRegisterMouseUpEvent</a><br>
+        <a href="#ccbRegisterOnFrameEvent">ccbRegisterOnFrameEvent</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbRegisterOnFrameEvent">ccbUnregisterOnFrameEvent</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <br>
+
+        <h3>Drawing</h3><a href="#ccbDrawColoredRectangle">ccbDrawColoredRectangle</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbDrawTextureRectangle">ccbDrawTextureRectangle</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbDrawTextureRectangleWithAlpha">ccbDrawTextureRectangleWithAlpha</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <br>
+
+        <h3>Collision</h3><a href="#ccbGet3DPosFrom2DPos">ccbGet3DPosFrom2DPos</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbGet2DPosFrom3DPos">ccbGet2DPosFrom3DPos</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbGetCollisionPointOfWorldWithLine">ccbGetCollisionPointOfWorldWithLine</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbDoesLineCollideWithBoundingBoxOfSceneNode">ccbDoesLineCollideWithBoundingBoxOfSceneNode</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+      </td>
+
+      <td valign="top">
+        <h3>Various</h3><a href="#ccbEndProgram">ccbEndProgram</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbLoadTexture">ccbLoadTexture</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbGetMousePosX">ccbGetMousePosX</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbGetMousePosY">ccbGetMousePosY</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbGetScreenWidth">ccbGetScreenWidth</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbGetScreenHeight">ccbGetScreenHeight</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbSetCloseOnEscapePressed">ccbSetCloseOnEscapePressed</a><br>
+        <a href="#ccbSetCursorVisible">ccbSetCursorVisible</a><br>
+        <a href="#ccbSwitchToScene">ccbSwitchToScene</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbPlaySound">ccbPlaySound</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+		    <a href="#ccbStopSound">ccbStopSound</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbGetCopperCubeVariable">ccbGetCopperCubeVariable</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbSetCopperCubeVariable">ccbSetCopperCubeVariable</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbReadFileContent">ccbReadFileContent</a><br>
+        <a href="#ccbWriteFileContent">ccbWriteFileContent</a><br>
+        <a href="#ccbGetPlatform">ccbGetPlatform</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbInvokeAction">ccbInvokeAction</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+		    <a href="#ccbGetCurrentNode">ccbGetCurrentNode</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>	
+        <a href="#ccbCleanMemory">ccbCleanMemory</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbSwitchToFullscreen">ccbSwitchToFullscreen</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbDoHTTPRequest">ccbDoHTTPRequest</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbCancelHTTPRequest">ccbCancelHTTPRequest</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+		    <a href="#ccbCreateMaterial">ccbCreateMaterial</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#ccbSetShaderConstant">ccbSetShaderConstant</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+	    	<a href="#ccbSetPhysicsVelocity">ccbSetPhysicsVelocity</a><br>
+		    <a href="#ccbUpdatePhysicsGeometry">ccbUpdatePhysicsGeometry</a><br>
+		    <a href="#ccbAICommand">ccbAICommand</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+		    <a href="#ccbSteamSetAchievement">ccbSteamSetAchievement</a><br>
+		    <a href="#ccbSteamResetAchievements">ccbSteamResetAchievements</a><br>		
+		    <a href="#ccbSaveScreenshot">ccbSaveScreenshot</a><br>		
+		    <a href="#ccbSaveTexture">ccbSaveTexture</a><br>		
+	    	<a href="#ccbSwitchToCCBFile">ccbSwitchToCCBFile</a><br>		
+        <a href="#print">print</a> <span class="socicon socicon-windows fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Windows" style="color: #bbbbbb;"></span><span class="devicon-html5-plain-wordmark" title="Works in WebGL" style="color: #bbbbbb;"></span><br>
+        <a href="#system">system</a><br>
+        <br>
+      </td>
+
+      <td valign="top">
+        <h3>Only in the editor</h3><a href="#confirm">confirm</a>&nbsp;<span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#alert">alert</a>&nbsp;<span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#prompt">prompt</a>&nbsp;<span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#editorAddSceneNode">editorAddSceneNode</a>&nbsp;<span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#editorFocusPosition">editorFocusPosition</a> <span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#editorGetFileNameFromDialog">editorGetFileNameFromDialog</a> <span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+	    	<a href="#editorGetSelectedSceneNode">editorGetSelectedSceneNode</a> <span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#editorGetSelectedTexture">editorGetSelectedTexture</a> <span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#editorUpdateAllWindows">editorUpdateAllWindows</a> <span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#editorRegisterMenuEntry">editorRegisterMenuEntry</a> <span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <a href="#editorSetSelectedSceneNode">editorSetSelectedSceneNode</a> <span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+	    	<a href="#editorImportStatic3DMesh">editorImportStatic3DMesh</a> <span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+		    <a href="#editorImportAnimated3DMesh">editorImportAnimated3DMesh</a> <span class="fas fa-fw fa-cube devicon-html5-plain-wordmark" title="Works in Coppercube editor" style="color: #bbbbbb;"></span><br>
+        <br>
+
+        <h3>Mesh Editing</h3><a href="#meshediting">ccbGetSceneNodeMeshBufferCount</a><br>
+        <a href="#meshediting">ccbRemoveMeshBuffer</a><br>
+        <a href="#meshediting">ccbAddMeshBuffer</a><br>
+        <a href="#meshediting">ccbGetMeshBufferVertexCount</a><br>
+        <a href="#meshediting">ccbGetMeshBufferIndexCount</a><br>
+        <a href="#meshediting">ccbAddMeshBufferIndex</a><br>
+        <a href="#meshediting">ccbGetMeshBufferIndexValue</a><br>
+        <a href="#meshediting">ccbSetMeshBufferIndexValue</a><br>
+        <a href="#meshediting">ccbAddMeshBufferVertex</a><br>
+        <a href="#meshediting">ccbGetMeshBufferVertexPosition</a><br>
+        <a href="#meshediting">ccbSetMeshBufferVertexPosition</a><br>
+        <a href="#meshediting">ccbGetMeshBufferVertexTextureCoord</a><br>
+        <a href="#meshediting">ccbSetMeshBufferVertexTextureCoord</a><br>
+        <a href="#meshediting">ccbGetMeshBufferVertexNormal</a><br>
+        <a href="#meshediting">ccbSetMeshBufferVertexNormal</a><br>
+        <a href="#meshediting">ccbGetMeshBufferVertexColor</a><br>
+        <a href="#meshediting">ccbSetMeshBufferVertexColor</a><br>
+        <a href="#meshediting">ccbUpdateSceneNodeBoundingBox</a><br>
+      </td>
+    </tr>
+  </tbody></table>
+
+  <p>Other:</p>
+
+  <p><a href="#vector3d">vector3d</a> - a vector class <a href="#stdLib"><br>
+  Standard Library</a>(basic functions for math, strings, arrays, regex etc)</p>
+  <hr>
+
+</div>
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+<!-- Place your own code above -->
+
+</section>
+
+<section class="mbr-section mbr-section--no-padding cid-tzYjc6F04B" id="witsec-html-block-1cb">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbGetSceneNodeFromName" id="ccbGetSceneNodeFromName"></a><cmd style=""><strong>ccbGetSceneNodeFromName(</strong>"Name"<strong>)</strong></cmd></p>
+
+  <blockquote>   
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>("Name")</strong> - String of the name of a scene node.</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Searches the whole scene graph for a scene node with this name. Please note that the name is case sensitive. If it is found, it is returned, otherwise null is returned.<br><strong><br></strong><strong>Returns:</strong> Returns the scene node based on the "Name".</p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var s = ccbGetSceneNodeFromName("cubeMesh1");
+
+if (s) print("found node.\n");
+else
+  print("not found the node.\n")
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Searches for a scene node with name 'cubeMesh1' and prints text if it is found or not.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-txZOh0197O" id="witsec-html-block-1bk">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbCloneSceneNode(</strong>Node<strong>)</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(Node)</strong> - Scene node that needs to be cloned.</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Creates a new scene node based on an existing scene node. All the behaviors and actions will also be applied to the cloned node.
+    The parameter 'node' must be an existing scene node. You can get an existing scene node for example with&nbsp;<a href="#ccbGetSceneNodeFromName" class="text-primary">ccbGetSceneNodeFromName()</a>.<br><strong><br></strong><strong>Returns:</strong> The new cloned scene node.</p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var sourceNode = ccbGetSceneNodeFromName("myNode");
+var newscenenode = ccbCloneSceneNode(sourceNode);
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will create a copy of an existing scene node with the name 'myNode'.</p></th>
+        </tr>
+      </tbody>
+    </table>
+    
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td>
+            <pre><code class="language-javascript"><p>var name_increment = ccbGetCopperCubeVariable("name_increment");
+var incremented_value = Number(name_increment + 1);
+ccbSetCopperCubeVariable("name_increment", incremented_value);
+var MainNode = ccbGetSceneNodeFromName("node_to_be_cloned");
+var ClonedNode = ccbCloneSceneNode(MainNode);
+ccbSetSceneNodeProperty(ClonedNode, "Name", "new_name_for_clone"+ "" +incremented_value+ "" );</p></code></pre>
+         </td>
+        </tr>
+        <tr>
+          <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:&nbsp;</strong>Above example will create a clone of the existing node and will assign a new name to every node that is cloned with a number as suffix. In order to make the above script work, you need to set a CopperCube Variable "name_increment" with a value of "0".</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tzXwsiR8Y0" id="witsec-html-block-1c4">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><cmd style=""><strong>ccbGetActiveCamera()</strong></cmd><a name="ccbGetActiveCamera" id="ccbGetActiveCamera"></a></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Returns:</strong> Returns the currently active camera node of the scene.</p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var Camera = ccbGetActiveCamera();
+var CameraName = ccbGetSceneNodeProperty(Camera,"Name");
+print(CameraName) 
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will get the current active camera from the scene and will print the name of the camera in the debug console.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tzXys40UuB" id="witsec-html-block-1c6">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbSetActiveCamera" id="ccbSetActiveCamera"></a><cmd style=""><strong>ccbSetActiveCamera(</strong>Node<strong>)</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(Node)</strong> - Camera scene node that need to be set as an active camera.</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Sets a camera node as currently active camera for the scene. The parameter 'node' must be an existing camera node. You can get an existing camera node for example with <a href="#ccbGetSceneNodeFromName" class="text-primary">ccbGetSceneNodeFromName()</a>.<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var NewCamera = ccbGetSceneNodeFromName("Camera2");
+ccbSetActiveCamera(NewCamera);
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will get the camera with name "Camera2" from the scene and make it the current active camera for that scene.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tzY36yoL5e" id="witsec-html-block-1ca">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbGetSceneNodeChildCount" id="ccbGetSceneNodeChildCount"></a><cmd style=""><strong>ccbGetSceneNodeChildCount(</strong>Node<strong>)</strong></cmd></p>
+
+  <blockquote>   
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(Node)</strong> - Scene node whose child nodes need to be counted.</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">It returns the number of total child nodes attached to a scene node. Parameter node must be an existing scene node.<br><strong><br></strong><strong>Returns:</strong> Returns the amount of children of a scene node.</p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var root = ccbGetRootSceneNode();
+var count = ccbGetSceneNodeChildCount(root);
+print("Scene nodes in the top level of the scene graph:" + count);
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will print the total number of scene nodes attached to the root scene node in your scene.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tzXAE0DfWl" id="witsec-html-block-1c7">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><cmd style=""><strong>ccbGetChildSceneNode(</strong>ParentSceneNode, ChildIndex<strong>)</strong></cmd><a name="ccbGetChildSceneNode" id="ccbGetChildSceneNode"></a></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(ParentSceneNode)</strong> - Scene node with child scene nodes attached.</par><br><par><strong>(ChildIndex)&nbsp;</strong>- An integer starting from 0 to maximum number of children the parent node has.</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Returns the child scene node of a parent scene node. 'ChildIndex' must be &gt;= 0 and less than the total childcount of that node that is less than the value return by <a href="#ccbGetSceneNodeChildCount" class="text-primary">ccbGetSceneNodeChildCount()</a>. The parameter 'ParentSceneNode' must be an existing scene node. You can get an existing scene node for example with <a href="#ccbGetSceneNodeFromName" class="text-primary">ccbGetSceneNodeFromName()</a> and 'ChildIndex' must be an integer lower than the total child count of parent node<br><strong><br></strong><strong>Returns:</strong> The child scene node at an index of specified parent scene node.</p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var ParentNode = ccbGetSceneNodeFromName("myNode");
+var Child = ccbGetChildSceneNode(parentNode, 0);
+var Childname = ccbGetSceneNodeProperty(Child, "Name");
+print(Childname);
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will get child at index 0 of a node with the name "myNode" and then print the name of the child node in the debug console.</p></th>
+        </tr>
+      </tbody>
+    </table>
+    
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td>
+            <pre><code class="language-javascript"><p>var root = ccbGetRootSceneNode();
+var count = ccbGetSceneNodeChildCount(root);
+
+//Using for loop to loop through all the childrens of root scene node            
+for(var i=0; i&lt;count; i++)
+  {
+    var child = ccbGetChildSceneNode(root, i);
+    print("node:" + ccbGetSceneNodeProperty(child, "Name") + "\n");
+  }</p></code></pre>
+         </td>
+        </tr>
+        <tr>
+          <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:&nbsp;</strong>Above example will print name of all the children of the root scene node in the debug console.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tzXOA4bOi8" id="witsec-html-block-1c9">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbGetRootSceneNode" id="ccbGetRootSceneNode"></a><cmd style=""><strong>ccbGetRootSceneNode()</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3">Returns the root scene node. You cannot remove it, it always exist in a scene, but you can make changes to its attributes like :-<br>&nbsp; &nbsp;➱ Gravity&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ➱ Wind&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;➱ Realtime Shadows<br>&nbsp; &nbsp;➱ Fog&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;➱ FogColor&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;➱&nbsp;AmbientLight<br>&nbsp; &nbsp;➱ BackgroundColor<br> PostEffect properties are also supported :-<br>&nbsp; &nbsp;➱ Bloom&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ➱ Bloom_BlurIterations&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ➱ Bloom_Treshold<br>&nbsp; &nbsp;➱ Black and White&nbsp; &nbsp; &nbsp; &nbsp; ➱ Invert&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ➱ Blur&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;➱ Blur_Iterations<br>&nbsp; &nbsp;➱ Colorize&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;➱ Colorize_Color&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;➱ Vignette <br>&nbsp; &nbsp;➱ Vignette_Intensity&nbsp; &nbsp; &nbsp; ➱ Vignette_RadiusA&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ➱ Vignette_RadiusB<br> etc.<br><strong><br></strong><strong>Returns:</strong> Returns the root scene node.</p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var RootNode = ccbGetRootSceneNode();
+var Fog = ccbGetSceneNodeProperty(RootNode,"Fog");
+print(Fog);
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will get the state of Fog in your scene and then print "true" or "false" in the debug console.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tA3zLI4cSt" id="witsec-html-block-1cg">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbGetSceneNodeProperty" id="ccbGetSceneNodeProperty"></a><cmd style=""><strong>ccbGetSceneNodeProperty(</strong>Node, "PropertyName"<strong>)</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(Node)</strong> - Scene node whose property value should be returned.</par><br><par><strong>("PropertyName") </strong>- String for the name of the property of a scene&nbsp; node whose value should be returned, for example "Position".</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Gets the property value of a scene node. The "PropertyName" is also the name displayed in the property window of the editor in the left column. Possible property names depend on the scene node type below is the list of properties available for different scene nodes.&nbsp;Please note that the name is case sensitive.<strong><br>
+    </strong></p>
+<ul>
+  <li><p class="mbr-text mbr-fonts-style mb-3"><strong>General properties for all type of nodes:<br></strong>➱ "Position"&nbsp; &nbsp; ➱ "Rotation"&nbsp; &nbsp; ➱ "Scale"&nbsp; &nbsp; ➱ "Visible"&nbsp; &nbsp; &nbsp;➱ "PositionAbs"&nbsp; &nbsp; &nbsp;&nbsp;➱"Type"</p></li>
+	<li><p class="mbr-text mbr-fonts-style mb-3"><strong>For Animated scene nodes:<br></strong>➱ "Animation"&nbsp; &nbsp; ➱ "Looping"&nbsp; &nbsp; ➱ "FramesPerSecond"&nbsp; &nbsp; ➱ "AnimationBlending"&nbsp; &nbsp; &nbsp;➱ "BlendTimeMs"&nbsp;</p></li>
+  <li><p class="mbr-text mbr-fonts-style mb-3"><strong>For Camera nodes:</strong><br>➱ "Target"&nbsp; &nbsp; &nbsp;➱ "UpVector"&nbsp; &nbsp; &nbsp;➱ "AspectRatio"&nbsp; &nbsp; &nbsp;➱"FieldOfView_Degrees"&nbsp; &nbsp;&nbsp;➱ "FarPlane"&nbsp; &nbsp;&nbsp;➱ "NearPlane"<br></p></li>
+  <li><p class="mbr-text mbr-fonts-style mb-3"><strong>For 2D overlay nodes:</strong><br>➱ "Pos X (percent)"&nbsp; &nbsp;➱ "Pos Y (percent)"&nbsp; &nbsp; &nbsp;➱ "Width (percent)"&nbsp; &nbsp; &nbsp; ➱ "Height (percent)"<br>➱ "Pos X (pixels)"&nbsp; &nbsp; &nbsp; ➱ "Pos Y (pixels)"&nbsp; &nbsp; &nbsp; &nbsp;➱ "Width
+    (pixels)"&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;➱ "Height (pixels)"<br> ➱ "Alpha"&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;➱ "Image"&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;➱"Background Color"&nbsp; &nbsp;➱"Draw Text"<br><span style="font-size: 1.09rem;">➱ "Text"&nbsp; &nbsp; </span><span style="font-size: 1.09rem;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 1.09rem;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 1.09rem;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 1.09rem;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-size: 1.09rem;">➱ "Alignment"&nbsp;&nbsp;</span><span style="font-size: 1.09rem;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 1.09rem;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 1.09rem;">&nbsp; ➱ "TextColor"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➱ "Font"<br>➱ "Position Mode"<br><br>Other properties for 2D overlays are also available like "OnHover Animate" and few other similar see the node properties in the editor.&nbsp;</p></li>
+	<li><p class="mbr-text mbr-fonts-style mb-3"><strong>For light nodes:</strong><br>➱ "Radius" (for point lights)&nbsp; &nbsp; &nbsp;➱ "Color"&nbsp; &nbsp; &nbsp;➱ "Direction" (for directional lights)</p></li>
+	<li><p class="mbr-text mbr-fonts-style mb-3"><strong>For the root scene node:</strong>&nbsp; Check <a href="#ccbGetRootSceneNode" class="text-primary">ccbGetRootSceneNode()</a> for list of root node properties.&nbsp;</p></li>
+	</ul>
+   <p class="mbr-text mbr-fonts-style mb-3">Values return for the properties can be a Vector, Integer, Float, Boolean, or String depending on the property type.<br><strong><br>Returns:</strong> The value for a property of a scene node.</p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var s = ccbGetSceneNodeFromName("cubeMesh1");
+
+var position = ccbGetSceneNodeProperty(s, "Position");
+
+print("The cube is at " + position);
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong>&nbsp;In above example if the scene contains a scene node with the name 'cubeMesh1', this will get the position vector of that node and prints something like "The cube is at (x, y, z)"&nbsp; x, y and z here are the position of scene node on the respective axis.</p></th>
+        </tr>
+      </tbody>
+    </table>
+    
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td>
+            <pre><code class="language-javascript"><p>var s = ccbGetSceneNodeFromName("overlay");
+            
+var font = ccbGetSceneNodeProperty(s,"Font");
+            
+print(font);
+
+// will give something like ("14; Swiss; Arial; Normal; Normal; false;");
+//&nbsp;Format is based on this&nbsp;(Font Size; Font Family; Font Name; Font Style; Font Weight; Font underlined) </p></code></pre>
+         </td>
+        </tr>
+        <tr>
+          <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result: </strong>Above example will print the font data of an existing 2D overlay whose name is "overlay" in your scene.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tA5iRm5tvs" id="witsec-html-block-1ck">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbGetSceneNodeProperty" id="ccbGetSceneNodeProperty"></a><cmd style=""><strong>ccbSetSceneNodeProperty(</strong>Node, "PropertyName", Value<strong>)</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(Node)</strong> - Scene node whose property needs to be changed.</par><br><par><strong>("PropertyName") </strong>- String for the name of the property of a scene node that need to be set, for example "Position".</par><br><par><strong>(Value)</strong> - Value can be a bool, integer, float, string, and vector.&nbsp; Properties like&nbsp; Color, Position, Rotation and Scale are generally vectors &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and contains 3 values like (x,y,z) here x,y and z can be floats or integers.&nbsp;&nbsp;</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Sets the property value of a scene node. The "PropertyName" is also the name displayed in the property window of the editor in the left column.&nbsp;When setting a vector, you can use x,y,z parameters, or a vector3d object. For colors, you can use a single int or 3 RGB values like 255,128,0. Possible property names depend on the scene node type below is the list of properties available for different scene nodes.&nbsp;Please note that the name is case sensitive.<strong><br>
+    </strong></p>
+<ul>
+  <li><p class="mbr-text mbr-fonts-style mb-3"><strong>General properties for all type of nodes:<br></strong>➱ "Position"&nbsp; &nbsp; ➱ "Rotation"&nbsp; &nbsp; ➱ "Scale"&nbsp; &nbsp; ➱ "Visible"&nbsp; &nbsp; &nbsp;➱ "PositionAbs"&nbsp; &nbsp; &nbsp;&nbsp;➱"Type"</p></li>
+	<li><p class="mbr-text mbr-fonts-style mb-3"><strong>For Animated scene nodes:<br></strong>➱ "Animation"&nbsp; &nbsp; ➱ "Looping"&nbsp; &nbsp; ➱ "FramesPerSecond"&nbsp; &nbsp; ➱ "AnimationBlending"&nbsp; &nbsp; &nbsp;➱ "BlendTimeMs"&nbsp;</p></li>
+  <li><p class="mbr-text mbr-fonts-style mb-3"><strong>For Camera nodes:</strong><br>➱ "Target"&nbsp; &nbsp; &nbsp;➱ "UpVector"&nbsp; &nbsp; &nbsp;➱ "AspectRatio"&nbsp; &nbsp; &nbsp;➱"FieldOfView_Degrees"&nbsp; &nbsp;&nbsp;➱ "FarPlane"&nbsp; &nbsp;&nbsp;➱ "NearPlane"<br></p></li>
+  <li><p class="mbr-text mbr-fonts-style mb-3"><strong>For 2D overlay nodes:</strong><br>➱ "Pos X (percent)"&nbsp; &nbsp;➱ "Pos Y (percent)"&nbsp; &nbsp; &nbsp;➱ "Width (percent)"&nbsp; &nbsp; &nbsp; ➱ "Height (percent)"<br>➱ "Pos X (pixels)"&nbsp; &nbsp; &nbsp; ➱ "Pos Y (pixels)"&nbsp; &nbsp; &nbsp; &nbsp;➱ "Width
+    (pixels)"&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;➱ "Height (pixels)"<br> ➱ "Alpha"&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;➱ "Image"&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;➱"Background Color"&nbsp; &nbsp;➱"Draw Text"<br><span style="font-size: 1.09rem;">➱ "Text"&nbsp; &nbsp; </span><span style="font-size: 1.09rem;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 1.09rem;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 1.09rem;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 1.09rem;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-size: 1.09rem;">➱ "Alignment"&nbsp;&nbsp;</span><span style="font-size: 1.09rem;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 1.09rem;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 1.09rem;">&nbsp; ➱ "TextColor"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➱ "Font"<br>➱ "Position Mode"<br><br>Other properties for 2D overlays are also available like "OnHover Animate" and few other similar see the node properties in the editor.&nbsp;</p></li>
+	<li><p class="mbr-text mbr-fonts-style mb-3"><strong>For light nodes:</strong><br>➱ "Radius" (for point lights)&nbsp; &nbsp; &nbsp;➱ "Color"&nbsp; &nbsp; &nbsp;➱ "Direction" (for directional lights)</p></li>
+	<li><p class="mbr-text mbr-fonts-style mb-3"><strong>For the root scene node:</strong>&nbsp; Check <a href="#ccbGetRootSceneNode" class="text-primary">ccbGetRootSceneNode()</a> for list of root node properties.&nbsp;</p></li>
+	</ul>
+   <p class="mbr-text mbr-fonts-style mb-3">Values return for the properties can be a Vector, Integer, Float, Boolean, or String depending on the property type.<strong><br></strong></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>//get scenenode named "cubeMesh1" and store it in a variable called s.<br>
+var s = ccbGetSceneNodeFromName("cubeMesh1");
+<br>//use the variable s as a scenenode and change it's visibility to false to hide it.
+<br>ccbSetSceneNodeProperty(s, "Visible", false);
+
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong>&nbsp;In above example if the scene contains a scene node with the name 'cubeMesh1', then the above code will hide that&nbsp; scene node by making it invisible. Remember hiding a node turns off any behavior that is attacked to it. It is better to add your code to other node or root node, if you want some of the behaviors to run even after the node is invisible.</p></th>
+        </tr>
+      </tbody>
+    </table>
+    
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td>
+            <pre><code class="language-javascript"><p>// get the node with the name "cubeMesh1" and store it in a variable called s<br>var s = ccbGetSceneNodeFromName("cubeMesh1");<br><br>//Get the current Scale of the scenenode and store in a variable<br>var currentScale = ccbGetSceneNodeProperty(s,"Scale");<br><br>//multiply the X,Y and Z axis of the currentScale by 2 to double the size of the node
+            
+ccbSetSceneNodeProperty(s,"Scale", currentScale.x*2, currentScale.y*2, currentScale.z*2);<br></p></code></pre>
+         </td>
+        </tr>
+        <tr>
+          <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result: </strong>Above example will scale the object by 2, results in doubling the size of existing scenenode with the name "cubeMesh1".</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCAvfDzoDq" id="witsec-html-block-1da">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbGetSceneNodeChildCount" id="ccbGetSceneNodeChildCount"></a><cmd style=""><strong>ccbGetSceneNodeMaterialCount(</strong>Node<strong>)</strong></cmd></p>
+
+  <blockquote>   
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(Node)</strong> - Scene node whose materials need to be counted.</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">It returns the number of total materials of a scene node. Parameter node must be an existing scene node.<br><strong><br></strong><strong>Returns:</strong> Returns the amount of materials of a scene node.</p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var s = ccbGetSceneNodeFromName("cubeMesh1");
+var n = ccbGetSceneNodeMaterialCount(s);
+print("the scene node has " + n + " materials");
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will print the amount of materials in a scene node named 'cubeMesh1'.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCAx3alQHb" id="witsec-html-block-1db">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbGetSceneNodeChildCount" id="ccbGetSceneNodeChildCount"></a><cmd style=""><strong>ccbRemoveSceneNode(</strong>Node<strong>)</strong></cmd></p>
+
+  <blockquote>   
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(Node)</strong> - Scene node that needs to be removed.</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">It removes the scene node from the scene, deleting it. Doesn't work for the root scene node.<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var s = ccbGetSceneNodeFromName("cubeMesh1");
+ccbRemoveSceneNode(s);
+
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will delete a scene node with the name 'cubeMesh1' if it exists in the scene.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCAyu5RgWK" id="witsec-html-block-1dd">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><cmd style=""><strong>ccbSetSceneNodeParent(</strong>Node, ParentSceneNode<strong>)</strong></cmd><a name="ccbGetChildSceneNode" id="ccbGetChildSceneNode"></a></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(Node)</strong> - Scene node whose parent needs to be updated.</par><br><par><strong>(ParentSceneNode)&nbsp;</strong>- Scene node that should be used as a parent for the Node.</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Sets the parent scene node of node. If this node has already a parent, it will be removed from that parent. Note that by setting a new parent, position, rotation and scale of this node becomes relative to that of the new parent. By default "Root Node" is set as default parent for all the scene nodes.<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var s = ccbGetSceneNodeFromName("cubeMesh1");
+var ParentNode = ccbGetSceneNodeFromName("myNode");
+ccbSetSceneNodeParent(s, ParentNode);
+// Sets an existing scene node with name "myNode" as a new parent node for an existing node with name "cubeMesh1"</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will set an existing scene node with name "myNode" as a new parent node for an existing scene node having name "cubeMesh1".</p></th>
+        </tr>
+      </tbody>
+    </table>
+    
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td>
+            <pre><code class="language-javascript"><p>var root = ccbGetRootSceneNode();
+var s = ccbGetSceneNodeFromName("cubeMesh1");
+
+ccbSetSceneNodeParent(s, root);<br></p></code></pre>
+         </td>
+        </tr>
+        <tr>
+          <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:&nbsp;</strong>Above example will make an existing scene node with name "cubeMesh1" a children of&nbsp; the&nbsp; "Root Scene Node".</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCACnB62WM" id="witsec-html-block-1de">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbGetSceneNodeChildCount" id="ccbGetSceneNodeChildCount"></a><cmd style=""><strong>ccbSetSceneNodePositionWithoutCollision(</strong>Node, X, Y, Z<strong>)</strong></cmd></p>
+
+  <blockquote>   
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(Node)</strong> - Scene node whose position need to be changed.</par><br><par><strong>(X)</strong> - New Position for the X-Coordinate.</par><br><par><strong>(Y)</strong> -&nbsp;New Position for the Y-Coordinate.</par><br><par><strong>(Z)</strong> -&nbsp;New Position for the Z-Coordinate.</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Sets a new position of a scene node, even if the scene node has a <strong>'collide when moved'</strong> behavior attached to it. So it it possible to move such a scene node through walls or other obstacles. Note that you have to ensure that the new position of the scene node is not inside a wall, otherwise the node might get stuck.<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var s = ccbGetSceneNodeFromName("cubeMesh1");
+ccbSetSceneNodePositionWithoutCollision(s, -20, 10, -40);
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will make an existing scene node with name "cubeMesh1"&nbsp; change its position to (-20,10,-40) , independent of its collision behavior.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCAHx1Dcf1" id="witsec-html-block-1dg">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbRegisterKeyDownEvent(</strong>"Function"<strong>)</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor, and only in the Windows and Mac OS X app target. For getting key events, use the behavior functions "behaviorName.prototype.onKeyEvent()".</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(Function)</strong> - Name of the function that needs to be registered as KeyDownEvent.&nbsp;Name must be in string format otherwise you will get an error.</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Registers a function for receiving a key down event. The function registered must take one parameter which will be the key code.<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>function keyPressedDown(keyCode)
+
+{
+
+    print("A key was pressed down:" + keyCode);
+
+}
+
+ccbRegisterKeyDownEvent("keyPressedDown");
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will print which key was pressed when it is pressed.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCAKpN2G4t" id="witsec-html-block-1dh">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbRegisterKeyUpEvent(</strong>"Function"<strong>)</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor, and only in the Windows and Mac OS X app target. For getting key events, use the behavior functions "behaviorName.prototype.onKeyEvent()".</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>("Function")</strong> - Name of the function that needs to be registered as KeyUpEvent. Name must be in string format otherwise you will get an error.</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Registers a function for receiving a key up event that is when a key is released. The function registered must take one parameter which will be the key code.<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>function keyLeftUp(keyCode)
+
+{
+
+    print("A key was left up:" + keyCode);
+
+}
+
+ccbRegisterKeyUpEvent("keyLeftUp");
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will print which key was left up when it is released.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCALW16J0s" id="witsec-html-block-1di">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbRegisterMouseDownEvent(</strong>"Function"<strong>)</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor, and only in the Windows and Mac OS X app target. For getting mouse events, use the behavior functions "behaviorName.prototype.onMouseEvent()".</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>("Function")</strong> - Name of the function that needs to be registered as MouseDownEvent.&nbsp;Name must be in string format otherwise you will get an error.</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Registers a function for receiving a mouse down event that is when a mouse button is pressed. The function registered must take one parameter which will be the mouse button pressed (0 for left button, 1 for right button, 2 for middle button).<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>function mousePressedDown(button)
+
+{
+
+    print("A mouse button was presssed down:" + button);
+
+}
+
+ccbRegisterMouseDownEvent("mousePressedDown");
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will prints which mouse button was pressed when it is pressed.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCAOdP5cSU" id="witsec-html-block-1dj">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbRegisterMouseUpEvent(</strong>"Function"<strong>)</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor, and only in the Windows and Mac OS X app target. For getting mouse events, use the behavior functions "behaviorName.prototype.onMouseEvent()".</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>("Function")</strong> - Name of the function that needs to be registered as MouseUpEvent.&nbsp;Name must be in string format otherwise you will get an error.</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Registers a function for receiving a mouse up event that is when a mouse button is released. The function registered must take one parameter which will be the mouse button released (0 for left button, 1 for right button, 2 for middle button).<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>function mouseLeftUp(button)
+
+{
+
+    print("A mouse button was left up:" + button);
+
+}
+
+ccbRegisterMouseUpEvent("mouseLeftUp");
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will prints which mouse button was left up when it is released.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCASV25Yop" id="ccbRegisterOnFrameEvent()">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbRegisterOnFrameEvent(</strong>Function<strong>)</strong></cmd><strong><br></strong><cmd style=""><strong>ccbUnregisterOnFrameEvent(</strong>Function<strong>)</strong><br></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> These functions are not available in the editor.</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(Function)</strong> - Name of the function that needs to be register or unregister.</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">ccbRegisterOnFrameEvent(Function) registers a function for receiving an 'on frame' event, an event which is called every frame the screen is drawn. The function registered must take no parameters. Inside this function, it is possible to draw own, custom things like user interfaces and other stuff.<br>After you no longer need events, you can call ccbUnregisterOnFrameEvent(Function) to unregister your function.<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>function onFrameDrawing()
+
+{
+
+  // draw a red, transparent rectangle at the position of the mouse
+
+ var mouseX = ccbGetMousePosX();
+
+ var mouseY = ccbGetMousePosY();
+
+ ccbDrawColoredRectangle(0x77ff0000, mouseX-10, mouseY-10, mouseX+10, mouseY+10);
+
+}
+
+ccbRegisterOnFrameEvent(onFrameDrawing);
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will draw a red rectangle at the position of the mouse cursor (or at the center if the mouse cursor is controlling a FPS style camera). Check the code below to stop drawing the rectangle.</p></th>
+        </tr>
+      </tbody>
+    </table>
+    
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td>
+            <pre><code class="language-javascript"><p>// To unRegister the function created in above example
+            
+ccbUnregisterOnFrameEvent(onFrameDrawing);</p></code></pre>
+         </td>
+        </tr>
+        <tr>
+          <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:&nbsp;</strong>Above code will unregister the 'on frame' event that we created in the first example that draws a red rectangle at mouse position.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCBmtty8Vr" id="witsec-html-block-1dm">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbDrawColoredRectangle(</strong>Color, X1, Y1, X2, Y2<strong>)</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor. This function can only be used inside an "on frame" event function which must have been registered with ccbRegisterOnFrameEvent().</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:</strong><br><par><strong>(Color)</strong> - Color in (0xaarrggbb) format for the rectangle.
+<br><strong>(X1)</strong> - 2D position on screen for X-Coordinate where the rectangle should start drawing from the point.
+<br><strong>(Y1)</strong> - 2D position on screen for Y-Coordinate where the rectangle should start drawing from the point.
+<br><strong>(X2)</strong> - 2D position on screen for X-Coordinate where the rectangle should end drawing to the point.
+<br><strong>(Y2)</strong> - 2D position on screen for Y-Coordinate where the rectangle should end drawing to point.<br></par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Draws a colored rectangle. This function can only be used inside an "on frame" event function which must have been registered with ccbRegisterOnFrameEvent.
+<br>
+<br>The color is a 32 bit value with alpha, red, green and blue components (0xaarrggbb, like the color values known from HTML but with an alpha channel value added in front, for the transparency). 0x770000ff is for example a transparent blue, to draw opaque rectangles, see the code provided for color conversion checkout the page for <a href="CS_color_conversion.html" class="text-primary">Javascript Color conversion</a>.</p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>function onFrameDrawing()
+
+{
+
+  // draw a blue, transparent rectangle at the center of the screen
+
+  var screenX = ccbGetScreenWidth()/2; //Divide by 2 to get the center of the screen
+  var screenY = ccbGetScreenHeight()/2; //Divide by 2 to get the center of the screen
+
+  ccbDrawColoredRectangle(0x770000ff, screenX-10, screenY-10, screenX+10, screenY+10);
+
+}
+
+ccbRegisterOnFrameEvent(onFrameDrawing);
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will draw a blue transparent rectangle at the center of the screen.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCBpmzlEY7" id="witsec-html-block-1do">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbDrawTextureRectangle(</strong>"File", X1, Y1, X2, Y2<strong>)</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor. This function can only be used inside an "on frame" event function which must have been registered with ccbRegisterOnFrameEvent().</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:</strong><br><par><strong>("File")</strong>&nbsp;- Path to the texture file that needs to be drawn.<br><strong>(X1)</strong> - 2D position on screen for X-Coordinate where the rectangle should start drawing from the point.
+<br><strong>(Y1)</strong> - 2D position on screen for Y-Coordinate where the rectangle should start drawing from the point.
+<br><strong>(X2)</strong> - 2D position on screen for X-Coordinate where the rectangle should end drawing to the point.
+<br><strong>(Y2)</strong> - 2D position on screen for Y-Coordinate where the rectangle should end drawing to point.<br></par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Draws a textured rectangle with alpha channel. This function can only be used inside an "on frame" event function which must have been registered with ccbRegisterOnFrameEvent.
+<br>
+<br>This function will ignore the alpha channel of the texture. Use ccbDrawTextureRectangleWithAlpha if you want the alpha channel to be taken into account as well.<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>function onFrameDrawing()
+
+{
+
+  // draw a textured rectangle at the top left of the screen
+
+  ccbDrawTextureRectangle("images\\image.png", 0, 0, 100, 100);
+  
+  //Change the value 100 to change the size of the texture
+
+}
+
+ccbRegisterOnFrameEvent(onFrameDrawing);
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will draw an image to the top left of the screen, the texture "image.png" needs to be exist in a directory "images" in the same folder as of your game.&nbsp;</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCBwQTmJE5" id="witsec-html-block-1dp">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbDrawTextureRectangleWithAlpha(</strong>"File", X1, Y1, X2, Y2<strong>)</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor. This function can only be used inside an "on frame" event function which must have been registered with ccbRegisterOnFrameEvent().</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:</strong><br><par><strong>("File")</strong>&nbsp;- Path to the texture file that needs to be drawn.<br><strong>(X1)</strong> - 2D position on screen for X-Coordinate where the rectangle should start drawing from the point.
+<br><strong>(Y1)</strong> - 2D position on screen for Y-Coordinate where the rectangle should start drawing from the point.
+<br><strong>(X2)</strong> - 2D position on screen for X-Coordinate where the rectangle should end drawing to the point.
+<br><strong>(Y2)</strong> - 2D position on screen for Y-Coordinate where the rectangle should end drawing to point.<br></par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Draws a textured rectangle with alpha channel. This function can only be used inside an "on frame" event function which must have been registered with ccbRegisterOnFrameEvent.
+<br>
+<br>This function will take the alpha channel of the texture into account, use ccbDrawTextureRectangle to draw texture that does not have an alpha channel.<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>function onFrameDrawing()
+
+{
+
+  // draw a custom mouse cursor using a cursor image as texture at the position of mouse
+
+  var mouseX = ccbGetMousePosX();
+  var mouseY = ccbGetMousePosY();
+  
+  ccbDrawTextureRectangleWithAlpha("cursor.png", mouseX-20, mouseY-20, mouseX+20, mouseY+20);
+  
+  //Change the value 20 above to adjust the size of cursor texture
+
+}
+
+ccbRegisterOnFrameEvent(onFrameDrawing);
+
+ccbSetCursorVisible(false); //Hide the default cursor
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will hide the default cursor and draws a custom image "cursor.png" with transparency at the position of mouse cursor. When you don't specify the full path of the texture, CopperCube checks the file in the same directory as of your game, so make sure you are having the file in right place.&nbsp;</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCCmPiY6w0" id="witsec-html-block-1dq">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbGetSceneNodeChildCount" id="ccbGetSceneNodeChildCount"></a><cmd style=""><strong>ccbGet3DPosFrom2DPos(</strong>X, Y<strong>)</strong></cmd></p>
+
+  <blockquote>   
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(X)</strong> - 2D position on screen for X-Coordinate.</par><br><par><strong>(Y)</strong> -&nbsp;2D position on screen for Y-Coordinate.</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Returns the 3d position of a 2d position on the screen. Note: A 2d position on the screen does not represent one single 3d point, but actually a 3d line. So in order to get this line, use the 3d point returned by this function and the position of the current camera to form this line.<br><strong><br></strong><strong>Returns:</strong> Returns the 3d position from a 2d position on the screen.</p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var mouseX = ccbGetMousePosX();
+var mouseY = ccbGetMousePosY();
+
+var s = ccbGetSceneNodeFromName("cubeMesh1"); 
+var pos3d = ccbGet3DPosFrom2DPos(mouseX, mouseY); // use mouse position for 3D position
+
+ccbSetSceneNodeProperty(s, "Position", pos3d);
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will sets the position of an existing scene node with the name 'cubeMesh1' to the 3d position behind the mouse cursor.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCGLtfn2R8" id="witsec-html-block-1dr">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbGetSceneNodeChildCount" id="ccbGetSceneNodeChildCount"></a><cmd style=""><strong>ccbGet2DPosFrom3DPos(</strong>X, Y, Z<strong>)</strong></cmd></p>
+
+  <blockquote>   
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(X)</strong> - 3D position for X-Coordinate.</par><br><par><strong>(Y)</strong> - 3D position for Y-Coordinate.</par><br><par><strong>(Z)</strong> - 3D position for Z-Coordinate.<br></par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Returns the 2D position from a 3D position or nothing if the position would not be on the screen (for example behind the camera). The position returned will be camera view dependent, so won't give a fixed result.&nbsp;<br><strong><br></strong><strong>Returns:</strong> Returns the 2D position from a 3D position on the screen.</p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var pos = ccbGet2DPosFrom3DPos(20, 30, 30);
+print("Position on screen: " + pos);<br><br>//prints the position of X and Y as 2D position the Z position will always be zero.<br>//The returned position is camera dependent so won't give you a fixed result</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will prints the position of a 3d coordinate (20,30,30) in 2D.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCGOU6slZm" id="witsec-html-block-1ds">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbGetSceneNodeChildCount" id="ccbGetSceneNodeChildCount"></a><cmd style=""><strong>ccbGetCollisionPointOfWorldWithLine(</strong>StartX, StartY, StartZ, EndX, EndY, EndZ<strong>)</strong></cmd></p>
+
+  <blockquote>   
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(StartX)</strong> - Starting position of the line on X-Coordinate.</par><br><par><strong>(StartY)</strong> - Starting position of the line on Y-Coordinate.</par><br><par><strong>(StartZ)</strong> - Starting position of the line on Z-Coordinate.
+<br><strong>(EndX)</strong> - Ending position of the line on X-Coordinate.
+<br><strong>(EndY)</strong> - Ending position of the line on Y-Coordinate.
+<br><strong>(EndZ)</strong> -&nbsp;Ending position of the line on X-Coordinate.</par><par><br></par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Returns the collision point with a line and the world which means if casted line collides with anything in the world it will return the point or position where the collision occurs. Returns null if there is no collision.<br><strong><br></strong><strong>Returns:</strong> Returns the collision point with the world.</p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p></p><p>function onFrameDrawing()
+<br>{
+
+&nbsp; var mouseX = ccbGetMousePosX();<br>  var mouseY = ccbGetMousePosY();
+<br>  // test collision by drawing a line from camera to the mouse position
+<br>  var startPoint = ccbGetSceneNodeProperty(ccbGetActiveCamera(), "Position"); // get camera position<br>  var endPoint = ccbGet3DPosFrom2DPos(mouseX, mouseY); // Convert mouse position into 3d position
+<br> &nbsp;var collisionPoint = ccbGetCollisionPointOfWorldWithLine(startPoint.x, startPoint.y, </p><p>  startPoint.z, endPoint.x, endPoint.y, endPoint.z);</p><p>&nbsp;&nbsp;<span style="font-size: inherit;">if (collisionPoint != null</span><span style="font-size: inherit;">) //checks if Collision happens or not</span></p><p>   {
+<br>     print("The casted line collides with something at position :- " + collisionPoint);
+<br>   }</p><p>&nbsp; else { <span style="font-size: inherit;">print("The casted line doesn't collides with anything");}</span></p><p>}</p><p>ccbRegisterOnFrameEvent(onFrameDrawing);</p><p>//Prints the collision point if collision occurs of a line casted from camera towards the mouse position.</p><p></p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will print the collision point if a the line casted from camera towards the mouse position collides with anything in the scene.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCH1gbmtUE" id="witsec-html-block-1dt">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbGetSceneNodeChildCount" id="ccbGetSceneNodeChildCount"></a><cmd style=""><strong>ccbDoesLineCollideWithBoundingBoxOfSceneNode(</strong>Node,<strong>&nbsp;</strong>StartX, StartY, StartZ, EndX, EndY, EndZ<strong>)</strong></cmd></p>
+
+  <blockquote>   
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:</strong><br><par><strong>(Node)</strong> - Node whose bounding box needs to be checked for collision.</par><br><par><strong>(StartX)</strong> - Starting position of the line on X-Coordinate.</par><br><par><strong>(StartY)</strong> - Starting position of the line on Y-Coordinate.</par><br><par><strong>(StartZ)</strong> - Starting position of the line on Z-Coordinate.
+<br><strong>(EndX)</strong> - Ending position of the line on X-Coordinate.
+<br><strong>(EndY)</strong> - Ending position of the line on Y-Coordinate.
+<br><strong>(EndZ)</strong> -&nbsp;Ending position of the line on X-Coordinate.</par><par><br></par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Returns if the bounding box of the given scene node collides with the line between two given 3D points.<br><strong><br></strong><strong>Returns:</strong> Returns true or false by checking collision between a line and bounding box of a scene node.</p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>
+function onFrameDrawing()
+{
+   var mouseX = ccbGetMousePosX();
+   var mouseY = ccbGetMousePosY();
+ 
+   // test collision of the line with the bounding box of "cubeMesh1"
+
+  var cube = ccbGetSceneNodeFromName("cubeMesh1");   
+  var endPoint = ccbGet3DPosFrom2DPos(mouseX, mouseY);
+  var  startPoint = ccbGetSceneNodeProperty(ccbGetActiveCamera(), "Position");
+ 
+  if (ccbDoesLineCollideWithBoundingBoxOfSceneNode(cube, startPoint.x, startPoint.y,
+                          startPoint.z, endPoint.x, endPoint.y, endPoint.z))
+   {
+     ccbDrawColoredRectangle(0x77ff0000, mouseX-10, mouseY-10, mouseX+10, mouseY+10);
+  }
+  else { ccbDrawColoredRectangle(0x770000ff, mouseX-10, mouseY-10, mouseX+10, mouseY+10);}
+}
+
+ccbRegisterOnFrameEvent(onFrameDrawing);
+</p></code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will draw a red rectangle at the position of the mouse cursor (or the center of the screen if controlled by a FPS style camera controller) if the mouse cursor is over an existing scene node named 'cubeMesh1', and draws a blue rectangle if not.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCILwpcFu3" id="witsec-html-block-1dx">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbEndProgram()</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Ends the application. On Flash and WebGL, this closes the window (if it was opened before as popup by a script).<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>ccbEndProgram();
+//Close the game in Windows or the browser tab if using in a webGL game.
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will close the game window.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCILBwxAbr" id="witsec-html-block-1dy">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbGetMousePosX()</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Returns the current X position of the mouse cursor from screen in pixels.
+<br>
+<br><strong>Returns:</strong> Returns the current X position of the mouse cursor in pixels.<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p> var mouseX = ccbGetMousePosX();
+ print(mouseX); // Print the X position of mouse in debug console
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will print the mouse position for the X-Coordinate of screen in debug panel.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCIMTpPsCl" id="witsec-html-block-1dz">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbGetMousePosX()</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
+    <p class="mbr-text mbr-fonts-style mb-3">Returns the current Y position of the mouse cursor from screen in pixels.
+<br>
+<br><strong>Returns:</strong> Returns the current Y position of the mouse cursor in pixels.<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p> function onFrameDrawing()
+
+{
+
+    var mouseY = ccbGetMousePosY();
+    var overlay = ccbGetSceneNodeFromName("2D Overlay1");
+    
+    ccbSetSceneNodeProperty(overlay,"Draw Text",true); //Enable Text Drawing for overlay
+    ccbSetSceneNodeProperty(overlay,"Text", "Y:- " + mouseY); //Change the text of overlay
+    
+}
+
+ccbRegisterOnFrameEvent(onFrameDrawing);
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will enable and change the Text of an existing 2D overlay with name "2D Overaly1" with the Y-Position of mouse cursor in pixels. It updates the text on every frame.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCMbAHqG53" id="witsec-html-block-1e0">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbSetMousePos(</strong>X, Y<strong>)</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong>&nbsp;This function is not available in the editor. This function is only available in the Windows .exe and macOS .app target.</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(X)</strong> - Position in pixels to set on the X-axis for mouse cursor.</par><br><par><strong>(Y)</strong> - Position in pixels to set on the Y-axis for mouse cursor.<br></par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Sets cursor position to a new position on the game screen<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var screenY = ccbGetScreenHeight();<br>var screenX = ccbGetScreenWidth();
+<br>ccbSetMousePos(screenX/4,screenY/4);<br><br>//put mouse cursor in the 1/4th part of the screen<br></p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will set the mouse cursor position to the 1/4th part of the screen, that is to the top left part of the game screen.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCMGOeUi9u" id="witsec-html-block-1e2">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbGetScreenWidth()</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Returns the current width of the screen in pixels, that is the width of the screen for X-Coordinate.<br>
+<br><strong>Returns:</strong> Returns the current width of the game screen in pixels.<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p> var screenX = ccbGetGetScreenWidth();
+ print(screenX); // Print the width of the game screen in debug console
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will print the Width of screen in debug panel.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCMATxL2Vq" id="witsec-html-block-1e1">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbGetScreenHeight()</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Returns the current height of the screen in pixels, that is the width of the screen for Y-Coordinate.<br>
+<br><strong>Returns:</strong> Returns the current height of the game screen in pixels.<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p> var screenY = ccbGetGetScreenHeight();
+ print(screenY); // Print the Height of the game screen in debug console
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will print the Height of screen in debug panel.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCMHtszfvQ" id="witsec-html-block-1e3">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbSetCursorVisible(</strong>true/false<strong>)</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong>&nbsp;This function may not do anything depending on the target it runs on (web apps for example have no access to the cursor). This function is not available in the editor.</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(true/false)</strong> - A boolean either true or false to set the visibility of cursor.</par><par><br></par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Sets if the mouse cursor is visible or not. Call ccbSetCursorVisible(false) to make it invisible, call ccbSetCursorVisible(true) to make visible again.<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>ccbSetCursorVisible(false);<br>//Hide the mouse cursor if it is visible already</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will hide the mouse cursor in the game screen if it is visible.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCMMhJNur3" id="witsec-html-block-1e5">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbSwitchToScene(</strong>"SceneName"<strong>)</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>("SceneName")</strong> - Name of the scene to which we want to switch.</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Switch to the scene with the specified name. Note: The name is case sensitive.</p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>ccbSwitchToScene("level 2"); //switch to the scene with name "Level 2".
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will switch the current scene to another existing scene with the name "Level&nbsp; 2".</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCNv12f5y3" id="witsec-html-block-1e7">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbSetCopperCubeVariable(</strong>"VariabaleName", VariableValue<strong>)</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>("VariableName")</strong> - Name that you want for the CopperCube variable. Variable names are case sensitive.</par><br><par><strong>(VariableValue)</strong> - Value that you want to assign to the CopperCube variable. It can be string, numbers , booleans etc.<br></par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Will set a CopperCube variable to a certain value. CopperCube variables can also be set and changed via the Variable Actions inside editor.<br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>ccbSetCopperCubeVariable("#system.soundvolume",50);<br><br><br>//"#sytem.soundvolume" is inbuilt CopperCube variable for sound volume</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will change the master volume of your game to 50.</p></th>
+        </tr>
+      </tbody>
+    </table>
+    
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td>
+            <pre><code class="language-javascript"><p>ccbSetCopperCubeVariable("Website", "Neophyte.cf");<br><br></p></code></pre>
+         </td>
+        </tr>
+        <tr>
+          <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:&nbsp;</strong>Above example will create and set a CopperCube variable with name "website" having a value "Neophyte.cf".</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tCOotucune" id="witsec-html-block-1e8">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbGetCopperCubeVariable(</strong>"VariabaleName"<strong>)</strong></cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>("VariableName")</strong> - Name of the CopperCube variable whose value you want to get. Variable names are case sensitive.</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Returns the value of a CopperCube variable if it exists. Returns 0 or false if variable doesn't exist.<br><strong><br></strong><strong>Returns:</strong> Returns the value of a CopperCube variable if it exists.</p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var websiteName = ccbGetCopperCubeVariable("Website");<br><br>print(websiteName);</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will print the value of the CopperCube variable "Website", and if the variable don't exist , it will print 0 in the debug console. If you initially set the variable using the example in ccbSetCopperCubeVariable command then it will print the name of this website as "Neophyte.cf".</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tF4zPl19Yr" id="witsec-html-block-1e9">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbWriteFileContent</strong>("FileName", "Content")</cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function may not do anything depending on the target it runs on (websites for example have no access to the file system).</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>("FileName")</strong> - Name of the file to save with the content. File path can be specified in it as well.<br><strong>("Content")</strong> - Text content that needs to be save in the file.<br></par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Creates a text file on the local storage with the text string provided as content.<br><br></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var text = "Neophyte.cf is a website that deal with Coppercube related stuff";
+ccbWriteFileContent("Example.txt", text) ; //creates a text file
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will create a text file with the name "Example.txt" in the same directory as of your project.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tFagiH5oqi" id="witsec-html-block-1ea">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbReadFileContent</strong>("FileName")</cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function may not do anything depending on the target it runs on (websites for example have no access to the file system).</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>("FileName")</strong> - Name of the file whose content needs to read and returned as string.</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Reads the content of a text file and return it as string.<br><strong><br></strong><strong>Returns:</strong> Content of the file as string.</p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var text = ccbReadFileContent("assets\\dialogue.txt");
+print(text);
+</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"></p><p><strong>Result:</strong> Above example will reads the text from a file named "dialogue.txt" located in a folder name "assets" in the project directory<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;and print it in the debug console.&nbsp;</p><p></p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section class="mbr-section mbr-section--no-padding cid-tFajL4RRJb" id="witsec-html-block-1eb">
+
+
+
+
+<!-- Place your own code below -->
+<div class="container">
+	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbFileExist</strong>("FileName")</cmd></p>
+
+  <blockquote>
+    <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function may not do anything depending on the target it runs on (websites for example have no access to the file system).</note></p>
+    
+    <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>("FileName")</strong> - Name of the file that's need to be checked. Path can be included as well.&nbsp;</par></p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Checks and return true or false based on the existence of the file in a directory.<br><strong><br></strong><strong>Returns:</strong> True or False based on the file existence.</p>
+
+    <p class="mbr-text mbr-fonts-style mb-3">Examples:<br></p>
+   <table border="0" cellpadding="5" cellspacing="5" width="0%">
+        <tbody>
+          <tr>
+            <td bgcolor="#E2E2E2">
+<pre><code class="language-javascript"><p>var FileExistence = ccbFileExist("Example.txt");
+print(FileExistence);// Prints true or false</p>
+</code></pre>
+            </td>
+          </tr>  
+
+        <tr>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will check if a file named "example.txt" exist in the directory of the project or not , if it is then print true else it will print false in the debug console.</p></th>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+<!-- Place your own code above -->
+
+</div></section>
+
+<section data-bs-version="5.1" class="footer4 cid-sEJ83mx5l0" once="footers" id="footer4-sEJ83mx5l0-sEJ83mx5l0-sEJ83mx5l0-11p">
+
+    
+    
+    <div class="container">
+        <div class="row mbr-white">
+            <div class="col-6 col-lg-3">
+                <div class="media-wrap col-md-8 col-12">
+                    <a href="index.html">
+                        <img src="assets/images/logo2-96x96.png" alt="Neophyte">
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7">
+                    <strong>About</strong>
+                </h5>
+                <p class="mbr-text mbr-fonts-style mb-4 display-4">
+                    Neophyte is a website developed to provide tutorials, assets and source files of CopperCube projects.</p>
+                <h5 class="mbr-section-subtitle mbr-fonts-style mb-3 display-7"><strong>Join Us</strong>
+                </h5>
+                <div class="social-row display-7">
+                    <div class="soc-item">
+                        <a href="https://discord.gg/RKcq89S7uA" target="_blank">
+                            <span class="mbr-iconfont socicon-discord socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://www.youtube.com/glitch_velocity?sub_confirmation=1" target="_blank">
+                            <span class="mbr-iconfont socicon-youtube socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://www.instagram.com/glitchedvelocity/" target="_blank">
+                            <span class="mbr-iconfont socicon-instagram socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://www.facebook.com/Neophyte.cf" target="_blank">
+                            <span class="mbr-iconfont socicon-facebook socicon"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7"><strong>Contacts</strong></h5>
+                <ul class="list mbr-fonts-style display-4">
+                    <li class="mbr-text item-wrap"><a href="contact_us.html" class="text-primary">Contact us</a></li>
+                    <li class="mbr-text item-wrap"><a href="mailto:neophyte.cf@gmail.com" class="text-primary">neophyte.cf@gmail.com</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7"><strong>Links</strong></h5>
+                <ul class="list mbr-fonts-style display-4">
+                    <li class="mbr-text item-wrap"><a href="https://ambiera.com" class="text-primary" target="_blank">Ambiera</a></li>
+                    <li class="mbr-text item-wrap"><a href="http://soundimage.org/" class="text-primary" target="_blank">Soundimage.org</a></li>
+                    <li class="mbr-text item-wrap"><br></li>
+                </ul>
+            </div>
+            <div class="col-12 mt-4">
+                <p class="mbr-text mb-0 mbr-fonts-style copyright align-center display-7">
+                    © Copyright 2018-2023 Neophyte - All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+</section><section><a href="https://mobiri.se"></a><a href="https://mobiri.se"></a></section><script src="assets/witsec-jquery-3.6.0/jquery-3.6.0.min.js"></script>  <script src="assets/popper/popper.min.js"></script>  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/web/assets/cookies-alert-plugin/cookies-alert-core.js"></script>  <script src="assets/web/assets/cookies-alert-plugin/cookies-alert-script.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/tether/tether.min.js"></script>  <script src="assets/viewportchecker/viewportchecker.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  
+  
+<input name="cookieData" type="hidden" data-cookie-cookiesAlertType='false' data-cookie-customDialogSelector='null' data-cookie-colorText='#424a4d' data-cookie-colorBg='rgb(234, 239, 241)' data-cookie-opacityOverlay='80' data-cookie-bgOpacity='100' data-cookie-textButton='Agree' data-cookie-rejectText='Reject' data-cookie-colorButton='#ff9966' data-cookie-rejectColor='#ffffff' data-cookie-colorLink='#ff9966' data-cookie-underlineLink='true' data-cookie-text="We use cookies to give you the best experience. By continuing to browse the site you are agreeing to our use of cookies.
+Review our  <a href='cookie_policy.html'>cookie policy</a> for more details.">
+   <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
+    <input name="animation" type="hidden">
+  </body>
+</html>

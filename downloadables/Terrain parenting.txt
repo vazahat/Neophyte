@@ -1,0 +1,4 @@
+var terrain = ccbGetSceneNodeFromName("Terrain1"); // this needs to be the name of your actual terrain
+var parent = ccbGetSceneNodeFromName("Terrain");// this needs to be the name of your object that you want to parent
+ccbSetSceneNodeParent(terrain,parent);
+editorUpdateAllWindows();

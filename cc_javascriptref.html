@@ -1,0 +1,2212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+  <meta name="robots" content="noarchive" />
+  <link rel="stylesheet" href="docustyle.css" type="text/css" />
+  <link rel="stylesheet" href="flexdoc_style.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="flexdoc_print.css" type="text/css" media="print" />
+
+  <title>Overview - Coppercube JavaScript Windows .exe and Mac OS X .app Scripting reference</title>
+  <!-- (c) 2006 - 2021 by N.Gebhardt, Ambiera -->
+</head>
+
+<body>
+  <a href="index.html" target="_top">Back to Content</a><br />
+  <br />
+
+  <h1>CopperCube JavaScript reference</h1><br />
+  CopperCube provides a very simple interface to manipulate all aspects of a 3D scene. See <a href=
+  "cnt_javascript_usage.html">CopperCube Scripting overview</a> for a short description on how to do this. This file lists all
+  available functions.<br />
+  <br />
+  <!-- <b>Note:</b> These functions are only available when publishing as Windows .exe or Mac OS X .app. When using WebGL as 
+target, you can use the CopperLicht engine functions instead, see <a href="cnt_webgl.html">here</a>.
+<br/><br/> -->Most of these functions manipulate so called &#39;scene nodes&#39;. A scene node is nothing more than a 3d object
+with a position, rotation, scale, its materials and children. The name &#39;scene node&#39; is there because CopperCube is
+internally using a scene graph to represent the 3d scene.<br />
+  <br />
+
+  <table style="border:none;" cellpadding="10">
+    <tr>
+      <td valign="top">
+        <h3>Scene Node Handling</h3><a href="#ccbCloneSceneNode">ccbCloneSceneNode</a><br />
+        <a href="#ccbGetActiveCamera">ccbGetActiveCamera</a><br />
+        <a href="#ccbSetActiveCamera">ccbSetActiveCamera</a><br />
+        <a href="#ccbGetChildSceneNode">ccbGetChildSceneNode</a><br />
+        <a href="#ccbGetRootSceneNode">ccbGetRootSceneNode</a><br />
+        <a href="#ccbGetSceneNodeChildCount">ccbGetSceneNodeChildCount</a><br />
+        <a href="#ccbGetSceneNodeProperty">ccbGetSceneNodeProperty</a><br />
+        <a href="#ccbSetSceneNodeProperty">ccbSetSceneNodeProperty</a><br />
+        <a href="#ccbGetSceneNodeFromName">ccbGetSceneNodeFromName</a><br />
+        <a href="#ccbGetSceneNodeMaterialCount">ccbGetSceneNodeMaterialCount</a><br />
+        <a href="#ccbGetSceneNodeMaterialProperty">ccbGetSceneNodeMaterialProperty</a><br />
+        <a href="#ccbSetSceneNodeMaterialProperty">ccbSetSceneNodeMaterialProperty</a><br />
+        <a href="#ccbRemoveSceneNode">ccbRemoveSceneNode</a><br />
+		<a href="#ccbSetSceneNodeParent">ccbSetSceneNodeParent</a><br />
+        <a href="#ccbSetSceneNodePositionWithoutCollision">ccbSetSceneNodePositionWithoutCollision</a><br />
+        <br />
+
+        <h3>Events</h3><a href="#ccbRegisterKeyDownEvent">ccbRegisterKeyDownEvent</a><br />
+        <a href="#ccbRegisterKeyUpEvent">ccbRegisterKeyUpEvent</a><br />
+        <a href="#ccbRegisterMouseDownEvent">ccbRegisterMouseDownEvent</a><br />
+        <a href="#ccbRegisterMouseUpEvent">ccbRegisterMouseUpEvent</a><br />
+        <a href="#ccbRegisterOnFrameEvent">ccbRegisterOnFrameEvent</a><br />
+        <a href="#ccbRegisterOnFrameEvent">ccbUnregisterOnFrameEvent</a><br />
+        <br />
+
+        <h3>Drawing</h3><a href="#ccbDrawColoredRectangle">ccbDrawColoredRectangle</a><br />
+        <a href="#ccbDrawTextureRectangle">ccbDrawTextureRectangle</a><br />
+        <a href="#ccbDrawTextureRectangleWithAlpha">ccbDrawTextureRectangleWithAlpha</a><br />
+        <br />
+
+        <h3>Collision</h3><a href="#ccbGet3DPosFrom2DPos">ccbGet3DPosFrom2DPos</a><br />
+        <a href="#ccbGet2DPosFrom3DPos">ccbGet2DPosFrom3DPos</a><br />
+        <a href="#ccbGetCollisionPointOfWorldWithLine">ccbGetCollisionPointOfWorldWithLine</a><br />
+        <a href="#ccbDoesLineCollideWithBoundingBoxOfSceneNode">ccbDoesLineCollideWithBoundingBoxOfSceneNode</a><br />
+      </td>
+
+      <td valign="top">
+        <h3>Various</h3><a href="#ccbEndProgram">ccbEndProgram</a><br />
+        <a href="#ccbLoadTexture">ccbLoadTexture</a><br />
+        <a href="#ccbGetMousePosX">ccbGetMousePosX</a><br />
+        <a href="#ccbGetMousePosY">ccbGetMousePosY</a><br />
+        <a href="#ccbGetScreenWidth">ccbGetScreenWidth</a><br />
+        <a href="#ccbGetScreenHeight">ccbGetScreenHeight</a><br />
+        <a href="#ccbSetCloseOnEscapePressed">ccbSetCloseOnEscapePressed</a><br />
+        <a href="#ccbSetCursorVisible">ccbSetCursorVisible</a><br />
+        <a href="#ccbSwitchToScene">ccbSwitchToScene</a><br />
+        <a href="#ccbPlaySound">ccbPlaySound</a><br />
+		<a href="#ccbStopSound">ccbStopSound</a><br />
+        <a href="#ccbGetCopperCubeVariable">ccbGetCopperCubeVariable</a><br />
+        <a href="#ccbSetCopperCubeVariable">ccbSetCopperCubeVariable</a><br />
+        <a href="#ccbReadFileContent">ccbReadFileContent</a><br />
+        <a href="#ccbWriteFileContent">ccbWriteFileContent</a><br />
+        <a href="#ccbGetPlatform">ccbGetPlatform</a><br />
+        <a href="#ccbInvokeAction">ccbInvokeAction</a><br />
+		<a href="#ccbGetCurrentNode">ccbGetCurrentNode</a><br />	
+        <a href="#ccbCleanMemory">ccbCleanMemory</a><br />
+        <a href="#ccbSwitchToFullscreen">ccbSwitchToFullscreen</a><br />
+        <a href="#ccbDoHTTPRequest">ccbDoHTTPRequest</a><br />
+        <a href="#ccbCancelHTTPRequest">ccbCancelHTTPRequest</a><br />
+		<a href="#ccbCreateMaterial">ccbCreateMaterial</a><br />
+        <a href="#ccbSetShaderConstant">ccbSetShaderConstant</a><br />
+		<a href="#ccbSetPhysicsVelocity">ccbSetPhysicsVelocity</a><br />
+		<a href="#ccbUpdatePhysicsGeometry">ccbUpdatePhysicsGeometry</a><br />
+		<a href="#ccbAICommand">ccbAICommand</a><br />
+		<a href="#ccbSteamSetAchievement">ccbSteamSetAchievement</a><br />
+		<a href="#ccbSteamResetAchievements">ccbSteamResetAchievements</a><br />		
+		<a href="#ccbSaveScreenshot">ccbSaveScreenshot</a><br />		
+		<a href="#ccbSaveTexture">ccbSaveTexture</a><br />		
+		<a href="#ccbSwitchToCCBFile">ccbSwitchToCCBFile</a><br />		
+        <a href="#print">print</a><br />
+        <a href="#system">system</a><br />
+        <br />
+      </td>
+
+      <td valign="top">
+        <h3>Only in the editor</h3><a href="#confirm">confirm</a><br />
+        <a href="#alert">alert</a><br />
+        <a href="#prompt">prompt</a><br />
+        <a href="#editorAddSceneNode">editorAddSceneNode</a><br />
+        <a href="#editorFocusPosition">editorFocusPosition</a><br />
+        <a href="#editorGetFileNameFromDialog">editorGetFileNameFromDialog</a><br/>
+		<a href="#editorGetSelectedSceneNode">editorGetSelectedSceneNode</a><br />
+        <a href="#editorGetSelectedTexture">editorGetSelectedTexture</a><br />
+        <a href="#editorUpdateAllWindows">editorUpdateAllWindows</a><br />
+        <a href="#editorRegisterMenuEntry">editorRegisterMenuEntry</a><br />
+        <a href="#editorSetSelectedSceneNode">editorSetSelectedSceneNode</a><br />
+		<a href="#editorImportStatic3DMesh">editorImportStatic3DMesh</a><br />
+		<a href="#editorImportAnimated3DMesh">editorImportAnimated3DMesh</a><br />
+        <br />
+
+        <h3>Mesh Editing</h3><a href="#meshediting">ccbGetSceneNodeMeshBufferCount</a><br />
+        <a href="#meshediting">ccbRemoveMeshBuffer</a><br />
+        <a href="#meshediting">ccbAddMeshBuffer</a><br />
+        <a href="#meshediting">ccbGetMeshBufferVertexCount</a><br />
+        <a href="#meshediting">ccbGetMeshBufferIndexCount</a><br />
+        <a href="#meshediting">ccbAddMeshBufferIndex</a><br />
+        <a href="#meshediting">ccbGetMeshBufferIndexValue</a><br />
+        <a href="#meshediting">ccbSetMeshBufferIndexValue</a><br />
+        <a href="#meshediting">ccbAddMeshBufferVertex</a><br />
+        <a href="#meshediting">ccbGetMeshBufferVertexPosition</a><br />
+        <a href="#meshediting">ccbSetMeshBufferVertexPosition</a><br />
+        <a href="#meshediting">ccbGetMeshBufferVertexTextureCoord</a><br />
+        <a href="#meshediting">ccbSetMeshBufferVertexTextureCoord</a><br />
+        <a href="#meshediting">ccbGetMeshBufferVertexNormal</a><br />
+        <a href="#meshediting">ccbSetMeshBufferVertexNormal</a><br />
+        <a href="#meshediting">ccbGetMeshBufferVertexColor</a><br />
+        <a href="#meshediting">ccbSetMeshBufferVertexColor</a><br />
+        <a href="#meshediting">ccbUpdateSceneNodeBoundingBox</a><br />
+      </td>
+    </tr>
+  </table>
+
+  <p>Other:</p>
+
+  <p><a href="#vector3d">vector3d</a> - a vector class <a href="#stdLib"><br />
+  Standard Library</a>(basic functions for math, strings, arrays, regex etc)</p>
+  <hr />
+
+  <p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><strong>ccbCloneSceneNode</strong>(node)</p>
+
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor.
+
+    <p>Creates a new scene node based on an existing scene node.</p>
+
+    <p>The parameter &#39;node&#39; must be an exiting scene node. You can get an existing scene node forexample with <a href=
+    "#ccbGetSceneNodeFromName">ccbGetSceneNodeFromName()</a></p>
+
+    <p>Returns: The new scene node.</p>
+
+    <p>Examples:</p>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var sourceNode = ccbGetSceneNodeFromName(&quot;myNode&quot;);<br />var newscenenode = ccbCloneSceneNode(sourceNode);<br />
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>This example will create a copy of an existing scene node with the name &#39;myNode&#39;.</td>
+        </tr>
+      </tbody>
+    </table><br />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbGetActiveCamera" id="ccbGetActiveCamera"><strong>ccbGetActiveCamera()</strong></a></p>
+
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor.
+
+    <p>Returns the currently active camera of the scene.</p><br />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbSetActiveCamera" id="ccbSetActiveCamera"></a><strong>ccbSetActiveCamera(node)</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor.
+
+    <p>Sets the currently active camera to the scene. The parameter &#39;node&#39; must be a camera scene node.</p><br />
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="ccbGetChildSceneNode" id="ccbGetChildSceneNode"></a>ccbGetChildSceneNode</strong>(parentSceneNode,
+  childIndex)</p>
+
+  <blockquote>
+    <p>Returns the child scene node of a parent scene node. ChildIndex must be &gt;= 0 and &lt; <a href=
+    "#ccbGetSceneNodeChildCount">ccbGetSceneNodeChildCount</a>.</p>
+
+    <p>Example:</p>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var root = ccbGetRootSceneNode();<br />var count = ccbGetSceneNodeChildCount(root);<br /><br />for(var i=0; i&lt;count; ++i)<br />{<br /> var child = ccbGetChildSceneNode(root, i);<br /> print(&quot;node:&quot; + ccbGetSceneNodeProperty(child, &quot;Name&quot;) + &quot;\n&quot;);<br />}
+                
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>This example prints the name of all child scene nodes of the root. </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p> </p>
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="ccbGetRootSceneNode" id="ccbGetRootSceneNode"></a>ccbGetRootSceneNode</strong>()</p>
+
+  <blockquote>
+    <p>Returns the root scene node. You cannot remove it and it does not make a lot of sense to change its attributes, but you can
+    use it as starting point to iterate the whole scene graph. Take a look at <a href=
+    "#ccbGetSceneNodeChildCount">ccbGetSceneNodeChildCount</a> for an example.</p>
+
+    <p>Returns: The root scene node.<br />
+    <br /></p>
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="ccbGetSceneNodeChildCount" id=
+  "ccbGetSceneNodeChildCount"></a>ccbGetSceneNodeChildCount</strong>(sceneNode)</p>
+
+  <blockquote>
+    <p>Returns the amount of children of a scene node. </p>
+
+    <p>Example:</p>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var root = ccbGetRootSceneNode();<br />var count = ccbGetSceneNodeChildCount(root);<br /><br />print(&quot;Scene nodes in the top level of the scene graph:&quot; + count);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>This example will return &#39;2&#39; if there are two scene nodes in your scene.</td>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+
+  <blockquote>
+    <p> </p>
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="ccbGetSceneNodeFromName" id="ccbGetSceneNodeFromName"></a>ccbGetSceneNodeFromName</strong>(name)</p>
+
+  <blockquote>
+    <p>Searches the whole scene graph for a scene node with this name. Please note that the name is case sensitive. If it is found,
+    it is returned, otherwise null is returned.</p>
+
+    <p>Example:</p>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var s = ccbGetSceneNodeFromName(&quot;cubeMesh1&quot;);<br /><br />if (s) print(&quot;found node.\n&quot;); <br /> else<br /> print(&quot;not found the node.\n&quot;)
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Searches for a scene node with name &#39;cubeMesh1&#39; and prints some text.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p> </p>
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="ccbGetSceneNodeMaterialCount" id=
+  "ccbGetSceneNodeMaterialCount"></a>ccbGetSceneNodeMaterialCount</strong>(sceneNode)</p>
+
+  <blockquote>
+    <p>Returns the amount of materials of the scene node.</p>
+
+    <p>Example:</p>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var s = ccbGetSceneNodeFromName(&quot;cubeMesh1&quot;);<br />var n = ccbGetSceneNodeMaterialCount(s);<br /><br />print(&quot;the scene node has &quot; + n + &quot; materials&quot;); 
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Prints the amount of materials in a scene node named &#39;cubeMesh1&#39;</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p> </p>
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="ccbGetSceneNodeMaterialProperty" id=
+  "ccbGetSceneNodeMaterialProperty"></a>ccbGetSceneNodeMaterialProperty</strong>(sceneNode, materialIndex, propertyName)</p>
+
+  <blockquote>
+    <p>Returns the property of the material of a scene node.<br />
+    Parameters:</p>
+  </blockquote>
+
+  <ul>
+    <li>sceneNode: A scene node.</li>
+
+    <li>materialIndex: The index of the material. Must be a value greater or equal 0 and smaller than <a href=
+    "#ccbGetSceneNodeMaterialCount">ccbGetSceneNodeMaterialCount()</a>.
+    </li>
+
+    <li>propertyName: The propertyName in a material. Can be &#39;Type&#39;, &#39;Texture1&#39;, &#39;Texture2&#39;,
+    &#39;Lighting&#39;, &#39;Backfaceculling&#39;. See <a href=
+    "#ccbSetSceneNodeMaterialProperty">ccbSetSceneNodeMaterialProperty</a> for details.
+    </li>
+  </ul>
+
+  <blockquote>
+    <p>Example:</p>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var s = ccbGetSceneNodeFromName(&quot;cubeMesh1&quot;);<br />var t = ccbGetSceneNodeMaterialProperty(s, 0, &quot;Texture1&quot;);<br /><br />print(&quot;texture of the cube is: &quot; + t);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Prints the name of the texture set in an existing scene node named &#39;cubeMesh1&#39;. Prints something like
+          &#39;texture of the new cube is: textures/editor_defaults/default_texture.png&#39;</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p> </p>
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="ccbLoadTexture" id="ccbLoadTexture"></a>ccbLoadTexture</strong>(filename)</p>
+
+  <blockquote>
+    <p>Loads a texture into the texture cache. Returns the texture object if sucessful, which then can be used for example in
+    <a href="#ccbSetSceneNodeMaterialProperty">ccbSetSceneNodeMaterialProperty()</a> calls with the texture parameter. Note that
+    the texture is only loaded once. You can call this multiple times with the same texture file, but CopperCube won&#39;t try to
+    load it multiple times if it has been loaded once already.<br />
+    <br />
+    Parameters:</p>
+
+    <ul>
+      <li>filename: Name of the texture to load. Use something like &#39;example.jpg&#39;, this will then load the file
+      &#39;example.jpg&#39; from the directory where your Windows or Mac OS X app is. On the Flash and WebGL target, the file will
+      be loaded from where your website is on your server. On these targets, it also works to use URLs (like
+      http://www.example.com/foobar.jpg&quot;) as parameter, but it depends on the security settings of your browser if the file
+      then is actually loaded.</li>
+    </ul>
+
+    <p>Example:</p>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var node = ccbGetSceneNodeFromName(&quot;cubeMesh1&quot;);
+var tex = ccbLoadTexture(&quot;example.jpg&quot;);
+ccbSetSceneNodeMaterialProperty(node, 0, &quot;Texture1&quot;, tex);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Loads a texture and sets it as material onto an object name &#39;cubeMesh1&#39;.</td>
+        </tr>
+      </tbody>
+    </table><br />
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="ccbRemoveSceneNode" id="ccbRemoveSceneNode"></a>ccbRemoveSceneNode</strong>(sceneNode)</p>
+
+  <blockquote>
+    <p>Removes the scene node from the scene, deleting it. Doesn&#39;t work for the root scene node.</p>
+
+    <p>Example:</p>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+ccbRemoveSceneNode( ccbGetSceneNodeFromName(&quot;cubeMesh1&quot;) );
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Deletes a scene node with the name &#39;cubeMesh1&#39; if it exists. </td>
+        </tr>
+      </tbody>
+    </table><br />
+  </blockquote>
+  <hr />
+  
+  
+    <p><strong><a name="ccbSetSceneNodeParent" id="ccbSetSceneNodeParent"></a>ccbSetSceneNodeParent</strong>(sceneNode, newparentnode)</p>
+
+  <blockquote>
+    <p>Sets the parent scene node of a scene node. If this node has already a parent, it will be removed from that parent. Note that
+	by setting a new parent, position, rotation and scale of this node becomes relative to that of the new parent.</p>
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="ccbSetSceneNodeMaterialProperty" id=
+  "ccbSetSceneNodeMaterialProperty"></a>ccbSetSceneNodeMaterialProperty</strong>(sceneNode, materialIndex, propertyName, value)</p>
+
+  <blockquote>
+    <p>Sets the property of the material of a scene node.<br />
+    Parameters:</p>
+  </blockquote>
+
+  <ul>
+    <li>sceneNode: A scene node.</li>
+
+    <li>materialIndex: The index of the material. Must be a value greater or equal 0 and smaller than <a href=
+    "#ccbGetSceneNodeMaterialCount">ccbGetSceneNodeMaterialCount()</a>.
+    </li>
+
+    <li>propertyName: The propertyName in a material. Can be &#39;Type&#39;, &#39;Texture1&#39;, &#39;Texture2&#39;,
+    &#39;Lighting&#39;, &#39;Backfaceculling&#39;. See below.</li>
+
+    <li>value: New value of the material property</li>
+  </ul>
+
+  <blockquote>
+    <p>Possible material parameters are:</p>
+
+    <table border="1">
+      <tr>
+        <td>Parameter name</td>
+
+        <td>Possible values</td>
+      </tr>
+
+      <tr>
+        <td>Type</td>
+
+        <td>&quot;solid&quot;, &quot;lightmap&quot;, &quot;lightmap_add&quot;, &quot;lightmap_m2&quot;, &quot;lightmap_m4&quot;,
+        &quot;reflection_2layer&quot;, &quot;trans_add&quot;, &quot;trans_alphach&quot;, &quot;trans_reflection_2layer&quot;</td>
+      </tr>
+
+      <tr>
+        <td>Texture1</td>
+
+        <td>A texture for texture layer 1</td>
+      </tr>
+
+      <tr>
+        <td>Texture2</td>
+
+        <td>A texture for texture layer 2</td>
+      </tr>
+
+      <tr>
+        <td>Lighting</td>
+
+        <td>true or false to enable or disable dynamic lighting</td>
+      </tr>
+
+      <tr>
+        <td>Backfaceculling</td>
+
+        <td>true or false to enable or disable backface culling</td>
+      </tr>
+    </table><br />
+    <br />
+    Also, if you are writing a plugin for the editor, there are some advanced properties available: &quot;Type&quot;,
+    &quot;Ambient&quot;, &quot;Diffuse&quot;, &quot;Emissive&quot;, &quot;Specular&quot;, &quot;Shininess&quot;,
+    &quot;Param1&quot;, &quot;Param2&quot;, &quot;Texture1&quot;, &quot;Texture2&quot;, &quot;Texture3&quot;, &quot;Texture4&quot;,
+    &quot;Wireframe&quot;, &quot;GouraudShading&quot;, &quot;Lighting&quot;, &quot;ZBuffer&quot;, &quot;ZWriteEnable&quot;,
+    &quot;BackfaceCulling&quot;, &quot;BilinearFilter&quot;, &quot;TrilinearFilter&quot;, &quot;AnisotropicFilter&quot;,
+    &quot;FogEnable&quot;, &quot;NormalizeNormals&quot;.
+  </blockquote>
+
+  <blockquote>
+    <p>Example:</p>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var s = ccbGetSceneNodeFromName(&quot;cubeMesh1&quot;);<br />ccbSetSceneNodeMaterialProperty(s, 0, &quot;Lighting&quot;, true);<br />
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Makes a node with the name &#39;cubeMesh1&#39; to use dynamic light.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Example 2:</p>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var node = ccbGetSceneNodeFromName(&quot;cubeMesh1&quot;);
+var tex = ccbLoadTexture(&quot;example.jpg&quot;);
+ccbSetSceneNodeMaterialProperty(node, 0, &quot;Texture1&quot;, tex);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Loads a texture and sets it as material onto an object name &#39;cubeMesh1&#39;.</td>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="ccbGetSceneNodeProperty" id="ccbGetSceneNodeProperty"></a>ccbGetSceneNodeProperty</strong>(sceneNode,
+  propertyName)</p>
+
+  <blockquote>
+    <p>Gets the property value of a scene node. The propertyName is also the name displayed in the property window of the editor in
+    the left column. Possible names depend on the scene node type, but usually names like &#39;Name&#39;, &#39;Position&#39;, &#39;PositionAbs&#39; (absolute position),
+    &#39;Rotation&#39;, &#39;Scale&#39;, &#39;Visible&#39; are available at least. Please note that the name is case
+    sensitive.<br />
+    <br />
+    <ul>
+	<li>For animated scene nodes, Properties like &#39;Animation&#39;, &#39;Looping&#39;, &#39;FramesPerSecond&#39; &#39;AnimationBlending&#39;, and &#39;BlendTimeMs&#39; are
+    available.</li>
+    <li>For camera nodes, Properties like &#39;Target&#39;, &#39;UpVector&#39;, &#39;AspectRatio&#39; and &#39;FieldOfView_Degrees&#39;
+    are available.</li>
+    <li>For 2D overlay nodes, Properties like the following are available: &#39;Pos X (percent)&#39;, &#39;Pos Y (percent)&#39;,
+    &#39;Width (percent)&#39;, &#39;Height (percent)&#39;, &#39;Pos X (pixels)&#39;, &#39;Pos Y (pixels)&#39;, &#39;Width
+    (pixels)&#39;, &#39;Height (pixels)&#39;, &#39;Alpha&#39;, &#39;Image&#39;, &#39;Background Color&#39;, &#39;Draw Text&#39;,
+    &#39;TextColor&#39;, &#39;Text&#39;.</li>
+	<li>For light nodes, Properties like &#39;Radius&#39; (for point lights), &#39;Color&#39;, and &#39;Direction&#39; (for directional lights) 
+    are available.</li>
+	<li>For the root scene node, you can use "FogColor", "Realtime Shadows" (to enable/disable shadow mapping), "AmbientLight", and "BackgroundColor".
+	   PostEffect properties are also supported: "Bloom", "Bloom_BlurIterations", "Bloom_Treshold", "Black and White", "Invert", "Blur", "Blur_Iterations", "Colorize", "Colorize_Color",
+	   "Vignette", "Vignette_Intensity", "Vignette_RadiusA", "Vignette_RadiusB".</li>
+	<li>You can also use "Type" which then usually returns something like "mesh", "animatedmesh", "billboard", "camera", "light", "mobile2dinput", "2doverlay", "particlesystem", "path",
+  "sky", "sound", or "water".</li>
+	</ul></p>
+
+    <p>Example:</p>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var s = ccbGetSceneNodeFromName(&quot;cubeMesh1&quot;);<br /><br />var position = ccbGetSceneNodeProperty(s, &quot;Position&quot;);<br /><br />print(&quot;The cube is at &quot; + position);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>If the scene contains a scene node with the name &#39;cubeMesh1&#39;, this example prints something like &quot;The
+          cube is at (-2.15537, -0.751433, -15.6934)&quot;</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p> </p>Also see <a href="#ccbSetSceneNodeProperty">ccbSetSceneNodeProperty()</a>.
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="ccbSetSceneNodeProperty" id="ccbSetSceneNodeProperty"></a>ccbSetSceneNodeProperty</strong>(sceneNode,
+  propertyName, value)<br />
+  <strong>ccbSetSceneNodeProperty</strong>(sceneNode, propertyName, x, y, z)<br />
+  <strong>ccbSetSceneNodeProperty</strong>(sceneNode, propertyName, r, g, b)
+  </p>
+
+  <blockquote>
+    <p>Sets the property value of a scene node. The propertyName is also the name displayed in the property window of the editor in
+    the left column. Possible names depend on the scene node type, but usually names like &#39;Name&#39;, &#39;Position&#39;, 
+    &#39;Rotation&#39;, &#39;Scale&#39;, and &#39;Visible&#39; are available at least. Please note that the name is case
+    sensitive. When setting a vector, you can use x,y,z parameters, or a vector3d object. For colors, you can use a single int
+	or 3 RGB values like 255,128,0.<br />
+    <br />
+    <ul>
+	<li>For animated scene nodes, Properties like &#39;Animation&#39;, &#39;Looping&#39;, &#39;FramesPerSecond&#39; &#39;AnimationBlending&#39;, and &#39;BlendTimeMs&#39; are
+    available.</li>
+    <li>For camera nodes, Properties like &#39;Target&#39;, &#39;UpVector&#39;, &#39;AspectRatio&#39; and &#39;FieldOfView_Degrees&#39;
+    are available.</li>
+    <li>For 2D overlay nodes, Properties like the following are available: &#39;Pos X (percent)&#39;, &#39;Pos Y (percent)&#39;,
+    &#39;Width (percent)&#39;, &#39;Height (percent)&#39;, &#39;Pos X (pixels)&#39;, &#39;Pos Y (pixels)&#39;, &#39;Width
+    (pixels)&#39;, &#39;Height (pixels)&#39;, &#39;Alpha&#39;, &#39;Image&#39;, &#39;Background Color&#39;, &#39;Draw Text&#39;,
+    &#39;TextColor&#39;, &#39;Text&#39;.</li>
+	<li>For light nodes, Properties like &#39;Radius&#39; (for point lights), &#39;Color&#39;, and &#39;Direction&#39; (for directional lights) 
+    are available.</li>
+	<li>For the root scene node, you can use "FogColor", "Realtime Shadows" (to enable/disable shadow mapping), "AmbientLight", and "BackgroundColor".
+	   PostEffect properties are also supported: "Bloom", "Bloom_BlurIterations", "Bloom_Treshold", "Black and White", "Invert", "Blur", "Blur_Iterations", "Colorize", "Colorize_Color",
+	   "Vignette", "Vignette_Intensity", "Vignette_RadiusA", "Vignette_RadiusB".</li>
+	</ul></p>
+
+    <p>Examples:</p>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var s = ccbGetSceneNodeFromName(&quot;cubeMesh1&quot;);<br />ccbSetSceneNodeProperty(s, &quot;Visible&quot;, false);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Makes a node with the name &#39;cubeMesh1&#39; invisible.</td>
+        </tr>
+      </tbody>
+    </table><br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var s = ccbGetSceneNodeFromName(&quot;cubeMesh1&quot;);<br />ccbSetSceneNodeProperty(s, &quot;Rotation&quot;, 20, 90, 0);<br />
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Changes the rotation of a node with the name &#39;cubeMesh1&#39; to (20, 90, 0)</td>
+        </tr>
+      </tbody>
+    </table>Also see <a href="#ccbGetSceneNodeProperty">ccbGetSceneNodeProperty()</a>.
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="ccbSetSceneNodePositionWithoutCollision" id=
+  "ccbSetSceneNodePositionWithoutCollision"></a>ccbSetSceneNodePositionWithoutCollision</strong>(sceneNode, x, y, z)</p>
+
+  <blockquote>
+    <p>Sets a new position of a scene node, even if the scene node has a &#39;collide with walls&#39; behavior attached to it. So
+    it it possible to move such a scene node through walls. Note that you have to ensure that the new position of the scene node is
+    not inside a wall, otherwise the node will be stuck.</p>
+
+    <p>Examples:</p>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var s = ccbGetSceneNodeFromName(&quot;cubeMesh1&quot;);<br />ccbSetSceneNodePositionWithoutCollision(s, -22.097015, 9.848448, -40.738777);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Makes a scene node change its position, independent of its collision behavior.</td>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbRegisterKeyDownEvent" id="ccbRegisterKeyDownEvent"></a><strong>ccbRegisterKeyDownEvent(funcstr)</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor, and only in the Windows and Mac OS X app target. For getting key
+    events, use the behavior functions onKeyEvent().
+
+    <p>Registers a function for receiving a key down event. The function registered must take one parameter which will be the key
+    code.</p>Examples:<br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+ccbRegisterKeyDownEvent(&quot;keyPressedDown&quot;);<br /><br />function keyPressedDown(keyCode)<br />{<br />    print(&quot;A key was pressed down:&quot; + keyCode);<br />}
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Prints which key was pressed when it is pressed.</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbRegisterKeyUpEvent" id="ccbRegisterKeyUpEvent"></a><strong>ccbRegisterKeyUpEvent(funcstr)</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor, and only in the Windows and Mac OS X app target. For getting key
+    events, use the behavior functions onKeyEvent().
+
+    <p>Registers a function for receiving a key down event. The function registered must take one parameter which will be the key
+    code.</p>Examples:<br />
+    <br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+ccbRegisterKeyUpEvent(&quot;keyPressedUp&quot;);<br /><br />function keyPressedUp(keyCode)<br />{<br />  print(&quot;A key was left up:&quot; + keyCode);<br />}
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Prints which key was left up when it is left up.</td>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbRegisterMouseDownEvent" id="ccbRegisterMouseDownEvent"></a><strong>ccbRegisterMouseDownEvent(funcstr)</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor, and only in the Windows and Mac OS X app target. For getting mouse
+    events, use the behavior functions onMouseEvent().
+
+    <p>Registers a function for receiving a key down event. The function registered must take one parameter which will be the mouse
+    button pressed (1 for left button, 2 for right button, 3 for middle button).</p>Examples:<br />
+    <br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+ccbRegisterMouseDownEvent(&quot;mousePressedDown&quot;);<br /><br />function mousePressedDown(button)<br />{<br />   print(&quot;A mouse button was presssed down:&quot; + button);<br />}
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Prints which mouse button was pressed when it is pressed</td>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbRegisterMouseUpEvent" id="ccbRegisterMouseUpEvent"></a><strong>ccbRegisterMouseUpEvent(funcstr)</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor, and only in the Windows and Mac OS X app target. For getting mouse
+    events, use the behavior functions onMouseEvent().
+
+    <p>Registers a function for receiving a key down event. The function registered must take one parameter which will be the mouse
+    button left up (1 for left button, 2 for right button, 3 for middle button)</p>Examples:<br />
+    <br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+ccbRegisterMouseUpEvent(&quot;mouseLeftUp&quot;);<br /><br />function mouseLeftUp(button)<br />{<br />    print(&quot;A mouse button was left up:&quot; + button);<br />}
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Prints which mouse button was left up when it is left up.</td>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbRegisterOnFrameEvent" id="ccbRegisterOnFrameEvent"></a><strong>ccbRegisterOnFrameEvent(func)</strong><br />
+  <a name="ccbUnregisterOnFrameEvent" id="ccbUnregisterOnFrameEvent"></a><strong>ccbUnregisterOnFrameEvent(func)</strong></p>
+
+  <blockquote>
+    <b>Note:</b> These functions are not available in the editor.
+
+    <p>ccbRegisterOnFrameEvent registers a function for receiving a &#39;on frame&#39; event, an event which is called every frame
+    the screen drawn. The function registered must take no parameters. Inside this function, it is possible to draw own, custom
+    things like user interfaces.<br />
+    After you no longer need events, call ccbUnregisterOnFrameEvent() to unregister your function.</p>Examples:<br />
+    <br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+function onFrameDrawing()<br />{<br />   // draw a red, transparent rectangle at the position of the mouse<br /> var mouseX = ccbGetMousePosX();<br /> var mouseY = ccbGetMousePosY();<br /><br />   ccbDrawColoredRectangle(0x77ff0000, mouseX-10, mouseY-10, mouseX+10, mouseY+10);<br />}<br /><br />ccbRegisterOnFrameEvent(onFrameDrawing);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Draws a red rectangle at the position of the mouse cursor (or at the center if the mouse cursor is controlling a FPS
+          style camera) </td>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbDrawColoredRectangle" id="ccbDrawColoredRectangle"></a><strong>ccbDrawColoredRectangle(color, x1, y1, x2,
+  y2)</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor.
+
+    <p>Draws a colored rectangle. This  function can only be used inside a frame event function which must have been registered
+    with ccbRegisterOnFrameEvent().</p>
+
+    <p>The color is a 32 bit value with alpha, red, green and blue components (0xaarrggbb, like the color values known from HTML
+    but with an alpha channel value added in front, for the transarency). 0x77ff0000 is for example a transparent red, 0xff0000ff
+    is a not-transparent blue.</p>Examples:<br />
+    <br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+function onFrameDrawing()<br />{<br />   // draw a red, transparent rectangle at the position of the mouse<br /> var mouseX = ccbGetMousePosX();<br /> var mouseY = ccbGetMousePosY();<br /><br />   ccbDrawColoredRectangle(0x77ff0000, mouseX-10, mouseY-10, mouseX+10, mouseY+10);<br />}<br /><br />ccbRegisterOnFrameEvent(onFrameDrawing);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Draws a red rectangle at the position of the mouse cursor (or at the center if the mouse cursor is controlling a FPS
+          style camera) </td>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbDrawTextureRectangle" id="ccbDrawTextureRectangle"></a><strong>ccbDrawTextureRectangle(file, x1, y1, x2,
+  y2)</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor.
+
+    <p>Draws a textured rectangle. This  function can only be used inside a frame event function which must have been registered
+    with ccbRegisterOnFrameEvent().</p>This function will ignore the alpha channel of the texture. Use
+    ccbDrawTextureRectangleWithAlpha if you want the alpha channel to be taken into account as well.
+
+    <p>Examples:<br /></p>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+function onFrameDrawing()<br />{<br />   // draw a red, textured rectangle at the position of the mouse<br />    var mouseX = ccbGetMousePosX();<br /> var mouseY = ccbGetMousePosY();<br /><br />   ccbDrawTextureRectangle(&quot;someFile.png&quot;, mouseX-100, mouseY-100, mouseX+100, mouseY+100);<br />}<br /><br />ccbRegisterOnFrameEvent(onFrameDrawing);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Draws a textured rectangle at the position of the mouse cursor (or at the center if the mouse cursor is controlling a
+          FPS style camera) </td>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbDrawTextureRectangleWithAlpha" id=
+  "ccbDrawTextureRectangleWithAlpha"></a><strong>ccbDrawTextureRectangleWithAlpha(</strong><strong>file, x1, y1, x2,
+  y2</strong><strong>)</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor.
+
+    <p>Draws a textured rectangle with alpha channel. This  function can only be used inside a frame event function which must have
+    been registered with ccbRegisterOnFrameEvent(). </p>
+
+    <p>This function will take the alpha channel of the texture into account, use ccbDrawTextureRectangleWithAlpha the texture does
+    not have an alpha channel.</p>
+
+    <p>Examples:<br /></p>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+function onFrameDrawing()<br />{<br />   // draw a red, textured rectangle at the position of the mouse<br />    var mouseX = ccbGetMousePosX();<br /> var mouseY = ccbGetMousePosY();<br /><br />   ccbDrawTextureRectangleWithAlpha(&quot;someFile.png&quot;, mouseX-100, mouseY-100, mouseX+100, mouseY+100);<br />}<br /><br />ccbRegisterOnFrameEvent(onFrameDrawing);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Draws a textured rectangle at the position of the mouse cursor (or at the center if the mouse cursor is controlling a
+          FPS style camera) </td>
+        </tr>
+      </tbody>
+    </table><br />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbGet3DPosFrom2DPos" id="ccbGet3DPosFrom2DPos"></a><strong>ccbGet3DPosFrom2DPos(x,y)</strong></p>
+
+  <blockquote>
+    <p>Returns the 3d position of a 2d position on the screen. Note: A 2d position on the screen does not represent one single 3d
+    point, but a actually a 3d line. So in order to get this line, use the 3d point returned by this function and the position of
+    the current camera to form this line.</p>
+
+    <p>Examples:<br /></p>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var mouseX = ccbGetMousePosX();<br />var mouseY = ccbGetMousePosY();<br /><br />var anode = ccbGetSceneNodeFromName(&quot;somenode&quot;); <br />var pos3d = ccbGet3DPosFrom2DPos(mouseX, mouseY);<br />ccbSetSceneNodeProperty(anode, &quot;Position&quot;, pos3d);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Sets the position of a scene node with the name &#39;somenode&#39; to the 3d position behind the mouse cursor.</td>
+        </tr>
+      </tbody>
+    </table><br />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbGet2DPosFrom3DPos" id="ccbGet2DPosFrom3DPos"></a><strong>ccbGet2DPosFrom3DPos(x,y,z)</strong></p>
+
+  <blockquote>
+    <p>Returns the 2D position of a 3D position or nothing if the position would not be on the screen (for example behind the
+    camera).</p>
+
+    <p>Examples:</p>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var pos = ccbGet2DPosFrom3DPos(20, 30, 30);  <br />print(&quot;Position on screen: &quot; + pos);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Prints the position of a 3d coordinate in 2D.</td>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbGetCollisionPointOfWorldWithLine" id=
+  "ccbGetCollisionPointOfWorldWithLine"></a><strong>ccbGetCollisionPointOfWorldWithLine(startX, startY, startZ, endX, endY,
+  endZ)</strong></p>
+
+  <blockquote>
+    <p>Returns the collision point with a line and the world. Returns null if there is no collision.</p><br />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbDoesLineCollideWithBoundingBoxOfSceneNode" id=
+  "ccbDoesLineCollideWithBoundingBoxOfSceneNode"></a><strong>ccbDoesLineCollideWithBoundingBoxOfSceneNode(node,</strong>
+  <strong>startX, startY, startZ, endX, endY, endZ</strong><strong>)</strong></p>
+
+  <blockquote>
+    <p>Returns if the bounding box of the given scene node collides with the line between two given points.</p>Examples:<br />
+    <br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+function onFrameDrawing()<br />{<br />   var mouseX = ccbGetMousePosX();<br /> var mouseY = ccbGetMousePosY();<br /> <br />  // test collision<br /><br />   var cube = ccbGetSceneNodeFromName(&quot;cubeMesh&quot;);   <br />  var endPoint3d = ccbGet3DPosFrom2DPos(mouseX, mouseY);<br />  var  startPos3D = ccbGetSceneNodeProperty(ccbGetActiveCamera(), &quot;Position&quot;);<br /> <br />  if (ccbDoesLineCollideWithBoundingBoxOfSceneNode(cube, startPos3D.x, startPos3D.y,<br />                          startPos3D.z, endPoint3d.x, endPoint3d.y, endPoint3d.z))<br />   {<br />     ccbDrawColoredRectangle(0x77ff0000, mouseX-10, mouseY-10, mouseX+10, mouseY+10);<br />  }<br /> else<br />      ccbDrawColoredRectangle(0x770000ff, mouseX-10, mouseY-10, mouseX+10, mouseY+10);<br />}<br /><br />ccbRegisterOnFrameEvent(onFrameDrawing);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Draws a red rectangle at the position of the mouse cursor (or the center of the screen if controlled by a FPS style
+          camera controller) if the mouse cursor is over a scene node named &#39;cubeMesh&#39;, and draws a blue rectangle if
+          not.</td>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbEndProgram" id="ccbEndProgram"></a><strong>ccbEndProgram()</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor.
+
+    <p>Ends the application. On Flash and WebGL, this closes the window (if it was opened before as popup by a script).</p><br />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbGetMousePosX" id="ccbGetMousePosX"></a><strong>ccbGetMousePosX()</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor.
+
+    <p>Returns the current X position of the mouse cursor in pixels.</p>Examples:<br />
+    <br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+function onFrameDrawing()<br />{<br />   // draw a red, transparent rectangle at the position of the mouse<br /> var mouseX = ccbGetMousePosX();<br /> var mouseY = ccbGetMousePosY();<br /><br />   ccbDrawColoredRectangle(0x77ff0000, mouseX-10, mouseY-10, mouseX+10, mouseY+10);<br />}<br /><br />ccbRegisterOnFrameEvent(onFrameDrawing);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Draws a red rectangle at the position of the mouse cursor (or at the center if the mouse cursor is controlling a FPS
+          style camera) </td>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbGetMousePosY" id="ccbGetMousePosY"></a><strong>ccbGetMousePosY()</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor.
+
+    <p>Returns the current Y position of the mouse cursor in pixels.</p>Examples:<br />
+    <br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+function onFrameDrawing()<br />{<br />   // draw a red, transparent rectangle at the position of the mouse<br /> var mouseX = ccbGetMousePosX();<br /> var mouseY = ccbGetMousePosY();<br /><br />   ccbDrawColoredRectangle(0x77ff0000, mouseX-10, mouseY-10, mouseX+10, mouseY+10);<br />}<br /><br />ccbRegisterOnFrameEvent(onFrameDrawing);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Draws a red rectangle at the position of the mouse cursor (or at the center if the mouse cursor is controlling a FPS
+          style camera) </td>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbGetScreenWidth" id="ccbGetScreenWidth"></a><strong>ccbGetScreenWidth()</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor.
+
+    <p>Returns the current with of the screen in pixels.</p>
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbGetScreenHeight" id="ccbGetScreenHeight"></a><strong>ccbGetScreenHeight()</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor.
+
+    <p>Returns the current with of the screen in pixels.</p>
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbSetCloseOnEscapePressed" id=
+  "ccbSetCloseOnEscapePressed"></a><strong>ccbSetCloseOnEscapePressed(bClose)</strong></p>
+
+  <blockquote>
+    <p>By default, the application on Windows and Mac OS X will close when the user presses escape in debug mode. By calling
+    ccbSetCloseOnEscapePressed(false) will disable this feature. On other targets, this function has no effect.</p><br />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbSetCursorVisible" id="ccbSetCursorVisible"></a><strong>ccbSetCursorVisible(bVisible)</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function may not do anything depending on the target it runs on (web apps for example have no access to the
+    cursor).<br />
+
+    <p>Sets if the mouse cursor is visible or not. Call ccbSetCursorVisible(false) to make it invisible, call
+    ccbSetCursorVisible(true) to make visible again.</p><br />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbSwitchToScene" id="ccbSwitchToScene"></a><strong>ccbSwitchToScene(sceneName)</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor.
+
+    <p>Switch to the scene with the specified name. ccbSwitchToScene(&quot;my scene&quot;) will switch to a scene named &quot;my
+    scene&quot; if there is one. Note: The name is case sensitive.</p><br />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbPlaySound" id="ccbPlaySound"></a><strong>ccbPlaySound(filename)</strong></p>
+
+  <blockquote>
+    <p>Will play a sound or music file. The following file formats are supported on Windows and Mac OS X: WAV, OGG, MOD, XM, IT, S3M.
+	For the other targets, this depends on the browser and platform. But usually, MP3 and OGG should be fine.</p><br />
+    <br />
+  </blockquote>
+  <hr />
+  
+  <p><a name="ccbStopSound" id="ccbStopSound"></a><strong>ccbStopSound(filename)</strong></p>
+
+  <blockquote>
+    <p>Will stop a sound or music, which has been started either by <a href="#ccbPlaySound">ccbPlaySound</a> or the "Play Sound" action.</p><br />
+    <br />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbSetCopperCubeVariable" id="ccbSetCopperCubeVariable"></a><strong>ccbSetCopperCubeVariable(varname,
+  value)</strong></p>
+
+  <blockquote>
+    <p>Will set a CopperCube variable to a certain value. CopperCube variables can be set and changed using the Variable Actions in
+    the editor.</p><br />
+    <br />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbGetCopperCubeVariable" id="ccbGetCopperCubeVariable"></a><strong>ccbGetCopperCubeVariable(varname)</strong></p>
+
+  <blockquote>
+    <p>Will get the value of a CopperCube variable. CopperCube variables can be set and changed using the Variable Actions in the
+    editor.</p><br />
+    <br />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbReadFileContent" id="ccbReadFileContent"></a><strong>ccbReadFileContent(filename)</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function may not do anything depending on the target it runs on (websites for example have no access to the
+    file system).<br />
+
+    <p>reads a full (text) file into a string</p><br />
+    <br />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbWriteFileContent" id="ccbWriteFileContent"></a><strong>ccbWriteFileContent(filename, content)</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function may not do anything depending on the target it runs on (websites for example have no access to the
+    file system).<br />
+
+    <p>writes a full (text) file from a string</p><br />
+    <br />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbInvokeAction" id="ccbInvokeAction"></a><strong>ccbInvokeAction(actionId, currentNode)</strong></p>
+
+  <blockquote>
+    <p>Starts a CopperCube action. To be used together with extension script behaviors or actions: If some action was defined in
+    the editor to be executed for this behavior or action, you can run it with this command.</p>
+
+    <blockquote>
+      Parameters:
+    </blockquote>
+
+    <ul>
+      <li>actionId: The id of the action to be run. Is stored by the coppercube runtime in the property with the type
+      &#39;action&#39;.</li>
+
+      <li>currentNode: Optional reference to the &#39;current scene node&#39;. Actions which which are set to use the
+      &#39;current&#39; scene node will then use this scene node as current one.</li>
+    </ul><br />
+    Example:<br />
+    <br />
+    Assume you have a script extension action with the following definition in it:<br />
+    <br />
+    <pre>
+&lt;property name=&quot;ActionWhenFinished&quot; type=&quot;action&quot; /&gt;
+</pre><br />
+    This means that the JavaScript instance of this action will have a property named &#39;ActionWhenFinished&#39; at runtime then,
+    referencing the action defined by the user in the editor. You can start this action using this call then:<br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+ccbInvokeAction(this.ActionWhenFinished);
+                                                        
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table><br />
+    Note that most actions assume the &#39;currentNode&#39; to be set for this action, so set this to a real action which makes
+    sense to be the current node in this context, like this:
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+ccbInvokeAction(this.ActionWhenFinished, this.TheNodeIamCurrentlyWorkingWith);
+                                                        
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table><br />
+    <br />
+  </blockquote>
+  <hr />
+  
+  <p><a name="ccbGetCurrentNode" id="ccbGetCurrentNode"></a><strong>ccbGetCurrentNode()</strong></p>
+
+  <blockquote>
+    
+    <p>Returns the current scene node. When running some JavaScript code via an 'execute JavaScript' action,
+	   there is always a "current node" set, usually the node in which the action is being run.</p><br />
+    <br />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbCleanMemory" id="ccbCleanMemory"></a><strong>ccbCleanMemory()</strong></p>
+
+  <blockquote>
+    <p>Cleans up the current memory usage. Tries to free up as much memory as possible by freeing up unused textures, vertex and
+    index buffers and similar. This is useful for calling it for example after switching scenes to increase performance of the app.
+    May have different effects on different platforms.</p><br />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbGetPlatform" id="ccbGetPlatform"></a><strong>ccbGetPlatform()</strong></p>
+
+  <blockquote>
+    <p>Returns a string identifying the system the CopperCube app is running on. For now, the following return types are
+    possible:</p>
+
+    <ul>
+      <li>&quot;windows&quot; - for Windows .exe apps</li>
+
+      <li>&quot;macosx&quot; - for Mac OS X .apps</li>
+
+      <li>&quot;android&quot; - for Android apps</li>
+
+      <li>&quot;webgl&quot; - when running as WebGL app</li>
+
+      <li>&quot;flash&quot; - for flash apps</li>
+    </ul><br />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbSwitchToFullscreen" id="ccbSwitchToFullscreen"></a><strong>ccbSwitchToFullscreen(enablePointerLock,
+  elementToSwitchToFullscreen, switchBackToWindowed)</strong></p>
+
+  <blockquote>
+    <p>When running as Windows .exe, WebGL or Flash app, switches the app to fullscreen, 
+	and also enables pointer lock for Flash or WebGL, if wanted. Note that this
+    function does nothing or doesn&#39;t even exist on platforms which are not Windows .exe, WebGL or Flash.<br />
+    <br />
+    Parameters:<br /></p>
+
+    <ul>
+      <li>enablePointerLock: If set to &#39;true&#39;, this enables mouse pointer lock after switching to fullscreen in Flash or WebGL. That way,
+      first person cameras work nicely in the Web. This parameter is ignored on the Windows .exe platform.</li>
+
+      <li>elementToSwitchToFullscreen: In WebGL, this is the HTML element which should be switched to fullscreen. If set to null,
+      the canvas element will be switched. This parameter can be set to null on other platforms.</li>
+	  
+	  <li>switchBackToWindowed: If set to &#39;true&#39;, on the Windows .exe platform, this switches back to windowed mode. This parameter can be set to null on other platforms.</li>
+    </ul><br />
+    There are a few limitations to this function:
+
+    <ul>
+	  <li>In Flash and WebGL, this function must be called in reaction to a mouse click or keyboard key press event. Otherwise this won&#39;t work.
+      This is a security limitation of the browser, both in Flash AND WebGL.</li>
+	  
+	  <li>When using this in Windows .exe, this only works in <a href="cnt_win32_exe.html#windowmodes" target="content" >dynamic / resizeable window mode</a>.</li>
+	  
+      <li>When using this in Flash, after switching to fullscreen mode, only cursorkeys and space keys work. This is a security
+      limitation of Flash.</li>	  
+    </ul><br />
+  </blockquote>
+  <hr />
+
+  <p><a name="ccbDoHTTPRequest" id="ccbDoHTTPRequest"></a><strong>ccbDoHTTPRequest(url, callback)</strong><br />
+  <a name="ccbCancelHTTPRequest" id="ccbCancelHTTPRequest"></a><strong>ccbCancelHTTPRequest(connectionIdToCancel)</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor.
+
+    <p>ccbDoHTTPRequest() makes a GET network request via HTTP to any web server, and ccbCancelHTTPRequest can cancel this request
+    while it is running. This allows to communicate with any web/database/multiplayer server with ease. For ccbDoHTTPRequest
+    parameters are:<br /></p>
+
+    <ul>
+      <li>url: set it an URL to request, like &#39;http:://www.example.com&#39; or similar.</li>
+
+      <li>callback: A callback function which will be called with the received data once the request is finished. This will also be
+      called if the request ailed, with an empty string as parameter.</li>
+    </ul><br />
+    The function returns an unique Id, for identifying this request. You can use this id as parameter for ccbCancelHTTPRequest(), to
+    cancel the running request, if it takes too long for example.<br /><br />
+	<b>Note:</b> On some targets, like WebGL and Flash, it is not possible to do cross domain requests because of security reasons. Usually you should only do requests to the same server your script is running on.
+	<br /><br />
+    Examples:<br />
+    <br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+function finishedRequest(dataReceived)
+{
+  print("finished request! Data size:" + dataReceived.length);
+}
+
+ccbDoHTTPRequest("http://www.ambiera.com/index.html", finishedRequest);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Downloads the front page of www.ambiera.com and shows how many bytes the page contains.</td>
+        </tr>
+      </tbody>
+    </table><br />
+    <br />
+  </blockquote>
+  <hr />
+  
+  <p><a name="ccbCreateMaterial" id="ccbCreateMaterial"></a><strong>ccbCreateMaterial(vertexShader, fragmentShader, baseMaterialType, shaderCallback)</strong><br />
+  <a name="ccbSetShaderConstant" id="ccbSetShaderConstant"></a><strong>ccbSetShaderConstant(type, name, value1, value2, value3, value4)</strong></p>
+
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor.
+
+    <p>ccbCreateMaterial() creates a new material based on vertex and pixel shaders. See <a href="cnt_shaders.html">Shader Programming in CopperCube</a> for details.<br/> Paramers for ccbCreateMaterial() are:<br /></p>
+
+    <ul>
+      <li>vertexShader: code of the vertex shader, or an empty string "".</li>
+	  <li>fragmentShader: code of the vertex shader, or an empty string "".</li>
+	  <li>base material type: usually 0 for the solid material. (2 for lightmap, 12 for additive transparency).</li>
+	  <li>shaderCallback: a function to be called before the material is used. In the function, call ccbSetShaderConstant() to set your shader constants.</li>
+    </ul>
+    The function returns an unique material id, which you can use to set the material type of any node to your new material using <a href="#ccbSetSceneNodeMaterialProperty">ccbSetSceneNodeMaterialProperty()</a>. It returns -1 if an error happened.<br /><br />
+	<br/>
+	<b>ccbSetShaderConstant()</b> may only be called during the material callback. Paramers for ccbSetShaderConstant() are:<br /></p>
+
+    <ul>
+      <li>type: type of the shader, either 1 for vertex and 2 for pixel shader. For GLSL, this is ignored.</li>
+	  <li>name: name of the variable to set</li>
+	  <li>value1, value2, value3, value4: Content of the variable, 4 floats.</li>
+    </ul><br />
+    Examples can be found in <a href="cnt_shaders.html">Shader Programming in CopperCube</a>.<br />
+    <br />
+  </blockquote>
+  <hr />
+  
+  <p><a name="ccbSetPhysicsVelocity" id="ccbSetPhysicsVelocity"></a><strong>ccbSetPhysicsVelocity(sceneNode, x, y, z)</strong></p>
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor.
+
+    <p>Sets the linear velocity of an object simulated by the physics engine. This only works when physics simulation is turned on and available for the current platform.<br/> Paramers are:<br /></p>
+
+    <ul>
+      <li>sceneNode: Node where this is applied to. The node needs either a "collide when moved" or a "object moved by physics engine" behavior attached to it, in oder to work.</li>
+	  <li>x, y, z: Velocity.</li>
+    </ul>
+    <br />
+  </blockquote>
+  <hr />
+  
+  
+   <p><a name="ccbUpdatePhysicsGeometry" id="ccbUpdatePhysicsGeometry"></a><strong>ccbUpdatePhysicsGeometry()</strong></p>
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor.
+
+    <p>Updates the collision geometry of the physics simulation. Call this when you modified the static geometry of the world and want the physics simulation to respect that. This only works when physics simulation is turned on and available for the current platform.<br/>
+    </ul>
+    <br />
+  </blockquote>
+  <hr />
+  
+  <p><a name="ccbAICommand" id="ccbAICommand"></a><strong>ccbAICommand(sceneNode, command, param)</strong></p>
+  <blockquote>
+    <b>Note:</b> This function is not available in the editor.
+
+    <p>Sends a command to an object with the behavior '<a href="cnt_behaviors.html#gameactor">Game Actor with Health</a>'. In this way, it is possible to make the object move somewhere, attack something, or similar.<br/> Paramers are:<br /></p>
+
+    <ul>
+      <li>sceneNode: Node where this is applied to. The node has to have a <a href="cnt_behaviors.html#gameactor">Game Actor with Health</a> behavior attached to it.</li>
+	  <li>command: String with the command. See below.</li>
+	  <li>param, Parameter for the command. See below.</li>
+    </ul>
+    <br />
+	Possible commands and parameters for the AI are:
+	<ul>
+		<li>"cancel" - AI will cancel the current action it is doing (shooting, walking etc) and start doing nothing, or start the next action which makes sense to it in the current situation (like attacking a nearby enemy). The parameter will be ignored and can be null.</li>
+		<li>"moveto" - AI will move to a 3d position. The parameter needs to be a vector3d() with the 3d position where to move to.</li>
+		<li>"attack" - AI will attack the enemy which is supplied as parameter. The ai will attack the enemy even if it is outside of the range of its weapon.</li>
+	</ul>
+	<br/>
+	Examples:<br />
+    <br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var s = ccbGetSceneNodeFromName("man");
+var otherNode = ccbGetSceneNodeFromName("soldier");
+ccbAICommand(s, "attack", otherNode);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Lets an AI with the name "man" attack another node with the name "soldier".</td>
+        </tr>
+      </tbody>
+    </table><br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var s = ccbGetSceneNodeFromName("man");
+ccbAICommand(s, "moveto", new vector3d(-16.4, 4.5, -38.7));
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Lets an AI with the name "man" move to the position -16.4, 4.5, -38.7.</td>
+        </tr>
+      </tbody>
+    </table><br />
+  </blockquote>
+  <hr />
+  
+  <p><a name="ccbSteamSetAchievement" id="ccbSteamSetAchievement"></a><strong>ccbSteamSetAchievement(achievementId)</strong></p>
+  <blockquote>
+    <b>Note:</b> This function only works in the Windows .exe target. 
+
+    <p>Sets a Steam achievement as achieved. The 'achievementId' is the string you specify in the Steam admin interface when creating the achievement.
+	Will draw the achivement overlay as well if set for the first time.
+	See the <a href="cnt_win32_exe.html#steam">Steam support description</a> for details.</p><br/>
+    <br />
+  </blockquote>
+  <hr />
+  
+  <p><a name="ccbSteamResetAchievements" id="ccbSteamResetAchievements"></a><strong>ccbSteamResetAchievements()</strong></p>
+  <blockquote>
+    <b>Note:</b> This function only works in the Windows .exe target. 
+
+	<p>Resets all Steam achievemts for the current user. See the <a href="cnt_win32_exe.html#steam">Steam support description</a> for details.</p><br/>
+    <br />
+  </blockquote>
+  <hr />
+  
+    <p><a name="ccbSaveScreenshot" id="ccbSaveScreenshot"></a><strong>ccbSaveScreenshot(filename)</strong></p>
+  <blockquote>
+    <b>Note:</b> This function only works in the Windows .exe and Mac OS X .app target. 
+
+	<p>Makes a screenshot: Saves the current content of the screen to a image file on the disk. The only parameter must be a file name, like "test.jpg" or "C:\\test.jpg". Supported file formats are
+	.bmp, .jpg, .tga, .psd, .pcx, .png and .ppm.</p><br/>
+    <br />
+  </blockquote>
+  <hr />
+  
+    <p><a name="ccbSaveTexture" id="ccbSaveTexture"></a><strong>ccbSaveTexture(texture, filename)</strong></p>
+  <blockquote>
+    <b>Note:</b> This function only works in the editor and the Windows .exe and Mac OS X .app target. 
+
+	<p>Saves a texure as file. The first parameter is the texture, the second must be a file name, like "test.jpg" or "C:\\test.jpg". Supported file formats are .bmp, .jpg, .tga, .psd, .pcx, .png and .ppm.</p><br/>
+     Example:
+ <pre>
+var s = ccbGetSceneNodeFromName("cubeMesh1");
+var t = ccbGetSceneNodeMaterialProperty(s, 0, "Texture1");
+ccbSaveTexture(t, "testout.jpg");
+</pre>  <br/><br/>
+  </blockquote>
+  <hr />
+  
+  
+  
+     <p><a name="ccbSwitchToCCBFile" id="ccbSwitchToCCBFile"></a><strong>ccbSwitchToCCBFile(filename)</strong></p>
+  <blockquote>
+    <b>Note:</b> This function only works in the Windows .exe and Mac OS .app target. 
+
+	<p>If your game uses a lot of data like textures / sounds / scenes etc, you can dynamically load levels and scenes at runtime using this function. When invoked this will wipe the memory and load/start that new file. This makes it possible to split your game up easily into
+  multiple files. Example:
+ <pre>
+ccbSwitchToCCBFile("otherfile.ccb");
+</pre>  </p><br/>
+    <br />
+  </blockquote>
+  <hr />
+
+  <p><a name="print" id="print"></a><strong>print(text)</strong></p>
+
+  <blockquote>
+    <p>Prints a string into the output window of the editor or into the debug console window of the app.</p><br />
+    <br />
+  </blockquote>
+  <hr />
+
+  <p><a name="alert" id="alert"></a><strong>alert(text)</strong></p>
+
+  <blockquote>
+    <p><b>This function is only available in the CopperCube editor</b><br />
+    Shows a string in a modal message box.</p><br />
+    Examples:<br />
+    <br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+alert(&quot;Hello World&quot;);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Shows the text <i>Hello World!</i> in a modal message box</td>
+        </tr>
+      </tbody>
+    </table><br />
+  </blockquote>
+  <hr />
+
+  <p><a name="alert" id="confirm"></a><strong>confirm(text)</strong></p>
+
+  <blockquote>
+    <p><b>This function is only available in the CopperCube editor</b><br />
+    Shows a string in a modal message box and asks to press either OK or CANCEL.</p><br />
+    Examples:<br />
+    <br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+if (confirm(&quot;Continue?&quot;))
+   print(&quot;User pressed OK!&quot;);
+else
+   print(&quot;User pressed Cancel.&quot;);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Shows the text <i>Continue?</i> in a modal message box and prints a text depending on what button the user
+          pressed.</td>
+        </tr>
+      </tbody>
+    </table><br />
+  </blockquote>
+  <hr />
+
+  <p><a name="alert" id="prompt"></a><strong>prompt(text, edittext)</strong></p>
+
+  <blockquote>
+    <p><b>This function is only available in the CopperCube editor</b><br />
+    Shows an edit box in a modal message box and asks to press either OK or CANCEL.</p><br />
+    Examples:<br />
+    <br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var ret = prompt(&quot;Please enter a text&quot;, &quot;some text&quot;);
+if (ret)
+  print(&quot;User entered this:&quot; + ret);
+else
+  print(&quot;User pressed cancel&quot;);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Shows the text <i>Please enter a text?</i> in a modal message box and an additional edit box.</td>
+        </tr>
+      </tbody>
+    </table><br />
+  </blockquote>
+  <hr />
+
+  <p><a name="system" id="system"></a><strong>system(commandline)</strong><br/>
+     <a name="system" id="system"></a><strong>system(commandline, hideWindow)</strong>
+  </p>
+
+  <blockquote>
+    <p>Executes the given command line. Can be used to run commands or launch programs.<br/>
+	If the optional parameter 'hideWindow' is set to 'true', then no console window will be shown when running this command.</p><br />
+    Examples:<br />
+    <br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+system(&quot;type C:\\Windows\\WindowsUpdate.log&quot;);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>On windows, this will print the content of the file WindowsUpdate.log (if available) to the screen.</td>
+        </tr>
+		 <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+system(&quot;type C:\\Windows\\WindowsUpdate.log&quot;, true);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Same, but without the console window becoming visible.</td>
+        </tr>
+      </tbody>
+    </table><br />
+  </blockquote>
+  <hr />
+
+  <p><a name="meshediting" id="meshediting"></a><strong>Mesh Editing</strong></p>Functions for manipulating the 3D geometry in
+  CopperCube:<br />
+  <b>Note:</b> Only available in the editor and on the Mac OS X and Windows app targets, for now.<br />
+  <br />
+  <strong>ccbGetSceneNodeMeshBufferCount(node)</strong> - Returns amount of mesh buffers in a scene node<br />
+  <strong>ccbRemoveMeshBuffer(node, meshbufferindex)</strong> - Erases a mesh buffer in a scene node<br />
+  <strong>ccbAddMeshBuffer(node)</strong> - Adds a new mesh buffer to a scene node<br />
+  <br />
+  <strong>ccbGetMeshBufferVertexCount(node, meshbufferindex)</strong> - Returns amount of vertices of a mesh buffer<br />
+  <strong>ccbGetMeshBufferIndexCount(node, meshbufferindex)</strong> - Returns amount of indices in a mesh buffer<br />
+  <br />
+  <strong>ccbAddMeshBufferIndex(node, meshbuffernumber, indexvalue)</strong> - Adds a new index value to a mesh buffer<br />
+  <strong>ccbGetMeshBufferIndexValue(node, meshbuffernumber, indexnumber)</strong> - Returns the value of an index in a mesh
+  buffer<br />
+  <strong>ccbSetMeshBufferIndexValue(node, meshbuffernumber, indexnumber, indexvalue)</strong> - Changes the value of an
+  index<br />
+  <br />
+  <strong>ccbAddMeshBufferVertex(node, meshbuffernumber, vertexposition)</strong> - Adds a vertex to a mesh buffer<br />
+  <strong>ccbGetMeshBufferVertexPosition(node, meshbufferindex, vertexindex)</strong> - Returns 3D position of a vertex<br />
+  <strong>ccbSetMeshBufferVertexPosition(node, meshbufferindex, vertexindex, vertex)</strong> - Sets the 3D position of a
+  vertex<br />
+  <br />
+  <strong>ccbGetMeshBufferVertexTextureCoord(node, meshbufferindex, vertexindex)</strong> - Gets texture coordinate of a
+  vertex<br />
+  <strong>ccbSetMeshBufferVertexTextureCoord(node, meshbufferindex, vertexindex, coord)</strong> - Sets texture coordinate of a
+  vertex<br />
+  <br />
+  <strong>ccbGetMeshBufferVertexNormal(node, meshbufferindex, vertexindex)</strong> - Returns normal of a vertex<br />
+  <strong>ccbSetMeshBufferVertexNormal(node, meshbufferindex, vertexindex, coord)</strong> - Sets the normal of a vertex<br />
+  <br />
+  <strong>ccbGetMeshBufferVertexColor(node, meshbufferindex, vertexindex)</strong> - Returns color of a vertex<br />
+  <strong>ccbSetMeshBufferVertexColor(node, meshbufferindex, vertexindex, color)</strong> - Sets color of a vertex<br />
+  <br />
+  <strong>ccbUpdateSceneNodeBoundingBox(node)</strong> - Calculates the new bounding box, necessary after changing the
+  geometry<br />
+
+  <blockquote>
+    <p>The functions listed above give access to all static 3D geometry in the editor, and make it possible to change it. It works
+    like this: Every node which has 3D geometry in copperCube has a 3D mesh, representing this 3D geometry. A 3D mesh consists of
+    several mesh buffers, one for each material. In each mesh buffer, there are several vertices, defining the 3D position of each
+    point of the 3D geometry, and several indices, connecting theses points to form triangles. There is always a multiple of three
+    indices, like for example <i>0, 2, 1</i> forming a triangle of the first three indices.</p><br />
+    Examples:<br />
+    <br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <b>Polygon and Material counting:</b>
+            <pre>
+var meshnode = editorGetSelectedSceneNode();
+var bufferCount = ccbGetSceneNodeMeshBufferCount(meshnode);
+if (bufferCount == 0)
+  alert(&#39;The selected node has no 3D geometry.&#39;);
+else
+{
+  var totalVertexCount = 0;
+  var totalIndexCount = 0;
+  for (var i=0; i&lt;bufferCount; ++i)
+  {
+    totalVertexCount += ccbGetMeshBufferVertexCount(meshnode, i);
+    totalIndexCount += ccbGetMeshBufferIndexCount(meshnode, i);
+  }
+
+  alert(&#39;The selected node has &#39; + (totalIndexCount/3) + &#39; polygons &#39; +
+        totalVertexCount + &#39; vertices, and &#39; +
+        bufferCount + &#39; materials.&#39; );
+}
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>This will print the total amount of polygons, vertices and materials of the selected node in the editor, like this:
+          <i>The selected node has 12 polygons 36 vertices, and 1 materials.</i> .</td>
+        </tr>
+      </tbody>
+    </table><br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <b>Modifying a 3D mesh:</b>
+            <pre>
+var meshnode = editorGetSelectedSceneNode();
+var bufferCount = ccbGetSceneNodeMeshBufferCount(meshnode);
+if (bufferCount == 0)
+  alert(&#39;The selected node has no 3D geometry.&#39;);
+else
+{
+  for (var i=0; i&lt;bufferCount; ++i)
+  {
+    var vertexcount = ccbGetMeshBufferVertexCount(meshnode, i);
+    for (var v=0; v&lt;vertexcount; ++v)
+    {
+       var pos = ccbGetMeshBufferVertexPosition(meshnode, i, v);
+        
+       pos.x *= 2; 
+       pos.y *= 2;
+       pos.z *= 2;
+        
+       ccbSetMeshBufferVertexPosition(meshnode, i, v, pos);
+    }
+  }  
+  ccbUpdateSceneNodeBoundingBox(meshnode);
+}
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>This will scale all vertices of the currently selected node in the editor by the factor 2. Note: this is different
+          from setting the scale value of the node, it actually will move all vertex positions.
+		  </td>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+  There is also tutorial available on how to <a href="cnt_scriptgeometry.html">Create 3D geometry using JavaScript</a>.
+  <br/>
+  <br/>
+  <br/>
+  <hr />
+
+  <p><strong><a name="editorAddSceneNode" id="editorAddSceneNode"></a>editorAddSceneNode</strong>(type)<br />
+  <strong>editorAddSceneNode</strong>(type, x, y, z)<br />
+  <strong>editorAddSceneNode</strong>(type, x, y, z, size)</p>
+
+  <blockquote>
+    <p>Creates a new scene node of type (must be a string) at position x, y, z, applies the default editor settings to it, selects
+    it and updates all editor views. This is just like if the user used the &#39;edit-&gt;insert&#39; command from the editor
+    menu.</p>
+
+    <p>The parameter &#39;type&#39; must be one of these strings:</p>
+
+    <p>&quot;cube&quot;, &quot;sphere&quot;, &quot;cylinder&quot;, &quot;cone&quot;, &quot;plane&quot;, &quot;light&quot;,
+    &quot;camera&quot;, &quot;billboard&quot;, &quot;skybox&quot;, &quot;hotspot&quot;, &quot;3dsound&quot;,&quot;overlay2d&quot; </p>
+
+    <p>x,y,z is the position where the scene node will be created. If not used, the position will be the default editor
+    position.</p>
+
+    <p>The parameter &#39;size&#39; is optional, and specifies a default size for the object, like 10 as widht and height of the
+    cube.</p>
+
+    <p>Returns: The new scene node.</p>
+
+    <p>Examples:</p>
+
+    <table width="0%" border="0" cellspacing="5" cellpadding="5">
+      <tr>
+        <td bgcolor="#E2E2E2">
+          <pre>
+var count = 3;
+var size = 12;<br />for (var x=0; x&lt;count; ++x) 
+   for (var y=0; y&lt;count; ++y) 
+      for (var z=0; z&lt;count; ++z) 
+         editorAddSceneNode(&quot;cube&quot;, x*size, y*size, z*size);
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td>This example will create 27 cubes placed in a hypercube.</td>
+      </tr>
+    </table><br />
+
+    <table width="0%" border="0" cellspacing="5" cellpadding="5">
+      <tr>
+        <td bgcolor="#E2E2E2">
+          <pre>
+editorAddSceneNode(&quot;billboard&quot;);
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td>This example will create a billBoard placed directly on front of the 3d camera in the main view.</td>
+      </tr>
+    </table>
+  </blockquote>
+
+  <blockquote>
+    <p> </p>
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="editorFocusPosition" id="editorFocusPosition"></a>editorFocusPosition</strong>(position)</p>
+
+  <blockquote>
+    <p>Lets the cameras of all view ports focus the given position.<br />
+    <br />
+    Example:</p>
+  </blockquote>
+
+  <blockquote>
+    <table width="0%" border="0" cellspacing="5" cellpadding="5">
+      <tr>
+        <td bgcolor="#E2E2E2">
+          <pre>
+editorFocusPosition(vector3d(0,10,20));
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Lets all cameras focus the position (0,10,20)</td>
+      </tr>
+    </table>
+
+    <p> </p>
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="editorGetSelectedSceneNode" id="editorGetSelectedSceneNode"></a>editorGetSelectedSceneNode</strong>()</p>
+
+  <blockquote>
+    <p>Returns the currently selected scene node or 0 if nothing selected.</p>
+  </blockquote>
+
+  <blockquote>
+    <p>Example:</p>
+
+    <table width="0%" border="0" cellspacing="5" cellpadding="5">
+      <tr>
+        <td bgcolor="#E2E2E2">
+          <pre>
+var s = editorGetSelectedSceneNode();
+<br />if (s)
+   alert(&quot;Name of the selected node is: &#39;&quot; + ccbGetSceneNodeProperty(s, &quot;Name&quot;) + &quot;&#39;&quot;);
+else
+   alert(&quot;nothing selected&quot;);
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td>This example prints the name of the currently selected scene node.</td>
+      </tr>
+    </table>
+
+    <p> </p>
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="editorGetSelectedTexture" id="editorGetSelectedTexture"></a>editorGetSelectedTexture</strong>()</p>
+
+  <blockquote>
+    <p>Returns the currently selected texture from the texture manager window.</p>
+  </blockquote>
+
+  <blockquote>
+    <p>Example:</p>
+
+    <table width="0%" border="0" cellspacing="5" cellpadding="5">
+      <tr>
+        <td bgcolor="#E2E2E2">
+          <pre>
+var t = editorGetSelectedTexture();<br />var s = editorAddSceneNode(&quot;cube&quot;);<br /><br />ccbSetSceneNodeMaterialProperty(s, 0, &quot;Texture1&quot;, t);
+<br />if (t == &quot;&quot;)
+  print(&quot;added no texture&quot;);
+else
+  print(&quot;set texture to: &quot; + t );<br />editorUpdateAllWindows();  
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Creates a new cube and applies the currently selected texture to it.</td>
+      </tr>
+    </table>
+
+    <p> </p>
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="editorGetFileNameFromDialog" id=
+  "editorGetFileNameFromDialog"></a>editorGetFileNameFromDialog</strong>()<br />
+  <strong>editorGetFileNameFromDialog</strong>(message)<br />
+  <strong>editorGetFileNameFromDialog</strong>(message, fileExtensions)<br />
+  <strong>editorGetFileNameFromDialog</strong>(message, fileExtensions, isOpenDialog)</p>
+
+  <blockquote>
+    <p>Shows a file selection dialog prompting the user to select a file and returns the selected filename or an empty string if
+    the user cancelled.<br />
+    <br />
+    Parameters:</p>
+  </blockquote>
+
+  <ul>
+    <li><strong>message</strong>: Message text displayed in the window caption area.</li>
+
+    <li><strong>fileExtensions</strong>: Possible file extension list, &quot;*.*&quot; by default if not used. The file extension
+    string must be in the wxWidgets used format, like &quot;BMP files (*.bmp)|*.bmp|GIF files (*.gif)|*.gif&quot; or
+    &quot;*.mesh;*.xml&quot;</li>
+
+    <li><strong>isOpenDialog</strong>: If true, the dialog presents itself as open file dialog, otherwise as save file dialog. This
+    is true by default.</li>
+  </ul>
+
+  <blockquote>
+    <p>Example:</p>
+
+    <table width="0%" border="0" cellspacing="5" cellpadding="5">
+      <tr>
+        <td bgcolor="#E2E2E2">
+          <pre>
+var s = editorGetFileNameFromDialog(&quot;please select something&quot;);<br /><br />if (s != &quot;&quot;)<br />   alert (&quot;user selected &quot; + s);<br />else<br />   alert(&quot;user cancelled selection&quot;);
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td>This example prompts the user to select a filename and prints which file was selected when finished.</td>
+      </tr>
+    </table>
+
+    <p> </p>
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="editorUpdateAllWindows" id="editorUpdateAllWindows"></a>editorUpdateAllWindows</strong>()</p>
+
+  <blockquote>
+    <p>Updates all windows of the editor. Same as selecting the command Edit-&gt;UpdateAllWindows or pressing F5 in the editor.</p>
+
+    <p>Example:</p>
+
+    <table width="0%" border="0" cellspacing="5" cellpadding="5">
+      <tr>
+        <td bgcolor="#E2E2E2">
+          <pre>
+editorAddSceneNode(&quot;cube&quot;);
+editorUpdateAllWindows();
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td>This example creates a new cube without default settings and updates the editor windows to show the new scene node in
+        all windows.</td>
+      </tr>
+    </table>
+
+    <p> </p>
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="editorRegisterMenuEntry" id="editorRegisterMenuEntry"></a>editorRegisterMenuEntry</strong>(function,
+  text)</p>
+
+  <blockquote>
+    <b>Note:</b> This function is only available in the editor.
+
+    <p>Registers a new entry in the menu under &#39;Plugins&#39; using the text provided in the &#39;text&#39; parameter. When the
+    menu command is selected by the user, the global function provided in the &#39;function&#39; parameter will be executed.<br />
+    Please note that editorRegisterMenuEntry only works when executed by a script run in the autostart mode, which means a script
+    placed in the \Documents\CopperCube\plugins directory and with the extension &#39;.js&#39;.</p>
+
+    <p>Example:</p>
+
+    <table width="0%" border="0" cellspacing="5" cellpadding="5">
+      <tr>
+        <td bgcolor="#E2E2E2">
+          <pre>
+function printHello()<br />{<br />  print(&quot;Hello\n&quot;);<br />}<br /><br />editorRegisterMenuEntry(&quot;printHello();&quot;, &quot;Print Hello into the log&quot;);
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Putting this script in a file named for example &#39;CopperCube\plugins\autostart_printhello.js&#39; and starting the
+        editor will add a new menu entry into the Tool menu which will print &#39;Hello&#39;</td>
+      </tr>
+    </table>
+
+    <p> </p>
+  </blockquote>
+  <hr />
+
+  <p><strong><a name="editorSetSelectedSceneNode" id="editorSetSelectedSceneNode"></a>editorSetSelectedSceneNode</strong>(node)</p>
+
+  <blockquote>
+    <p>Sets a selected scene node. Set node to 0 to select nothing.<br />
+    <br />
+    Example:</p>
+
+    <table width="0%" border="0" cellspacing="5" cellpadding="5">
+      <tr>
+        <td bgcolor="#E2E2E2">
+          <pre>
+var s = editorAddSceneNode(&quot;sphere&quot;);<br />editorSetSelectedSceneNode(s);
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Adds a scene node and selects it in the editor.</td>
+      </tr>
+    </table>
+  </blockquote>
+  <hr />
+  
+   <p><strong><a name="editorImportStatic3DMesh" id="editorImportStatic3DMesh"></a>editorImportStatic3DMesh</strong>(filename)</p>
+
+  <blockquote>
+    <p>Imports a static mesh file into the editor.<br />
+    <br />
+    Example:</p>
+
+    <table width="0%" border="0" cellspacing="5" cellpadding="5">
+      <tr>
+        <td bgcolor="#E2E2E2">
+          <pre>
+var filename = 
+  editorGetFileNameFromDialog("please select a mesh file to import");
+
+editorImportStatic3DMesh(filename);
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Imports a static mesh file which is selected by the user.</td>
+      </tr>
+    </table>
+  </blockquote>
+  <hr />
+  
+   <p><strong><a name="editorImportAnimated3DMesh" id="editorImportAnimated3DMesh"></a>editorImportAnimated3DMesh</strong>(node)</p>
+
+  <blockquote>
+    <p>Imports an animated mesh file into the editor.<br />
+    <br />
+    Example:</p>
+
+    <table width="0%" border="0" cellspacing="5" cellpadding="5">
+      <tr>
+        <td bgcolor="#E2E2E2">
+          <pre>
+var filename = 
+  editorGetFileNameFromDialog("please select a mesh file to import");
+
+editorImportAnimated3DMesh(filename);
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Imports an animated mesh file which is selected by the user.</td>
+      </tr>
+    </table>
+  </blockquote>
+  <hr />
+
+  <p><a name="vector3d" id="vector3d"></a><strong>vector3d()</strong><br />
+  <strong>vector3d(x,y,z)</strong></p>
+
+  <blockquote>
+    <p>A class for holding 3 float coordinates - x, y, and z. Also provides helper methods:</p>
+  </blockquote>
+
+  <ul>
+    <li><strong>add</strong>, <strong>substract</strong>: Addition and substraction of vectors</li>
+
+    <li><strong>getLength()</strong> for calculating the length</li>
+
+    <li><strong>normalize()</strong> for making the vector length of 1</li>
+
+    <li>string conversion</li>
+  </ul>
+
+  <blockquote>
+    <p>Examples:</p>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var v = new vector3d(0,0,0);<br />print(v);
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>prints (0, 0, 0)</td>
+        </tr>
+      </tbody>
+    </table><br />
+
+    <table border="0" cellpadding="5" cellspacing="5" width="0%">
+      <tbody>
+        <tr>
+          <td bgcolor="#E2E2E2">
+            <pre>
+var v1 = new vector3d(10,0,0);<br />var v2 = new vector3d(0,20,0);<br />var v3 = v1.add(v2);<br /><br />v3.normalize();<br />print(v3 + &quot; Length:&quot; + v3.getLength())
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>prints (0.447214, 0.894427, 0) Length:1</td>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+  <hr />
+
+  <p> </p>
+
+  <p><a name="stdLib" id="stdLib"></a><strong>Other routines available</strong> (for details please see the JavaScript
+  Standard):</p>
+
+  <p><strong>Math</strong>: Math.abs(x); Math.acos(x); Math.asin(x); Math.atan(x); Math.atan2(x, y); Math.ceil(x); Math.cos(x);
+  Math.exp(x); Math.floor(x); Math.log(x); Math.pow(x, y); Math.random(); Math.round(), Math.sin(x); Math.sqrt(x);
+  Math.tan(x);</p><strong>Others</strong> All the JavaScript core functionality, like date, regexp, strings, arrays, etc.
+
+  <p> </p>
+
+  <p> </p>
+
+  <p> </p>
+</body>
+</html>

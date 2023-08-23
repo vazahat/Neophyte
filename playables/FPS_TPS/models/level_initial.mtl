@@ -1,0 +1,24 @@
+# Created with Anim8or 0.98
+# Object "object01":
+
+newmtl cube_1_wall
+Ka 0.878 0.878 0.878
+Kd 0.878 0.878 0.878
+Ks 1 1 1
+Ns 752.6
+map_Kd cube_1_wall.jpg
+
+newmtl cube_ceil
+Ka 0.878 0.878 0.878
+Kd 0.878 0.878 0.878
+Ks 1 1 1
+Ns 752.6
+map_Kd cube_1_floor.jpg
+
+newmtl cube_!_tri
+Ka 0.878 0.878 0.878
+Kd 0.878 0.878 0.878
+Ks 1 1 1
+Ns 752.6
+map_Kd tri.jpg
+

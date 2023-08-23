@@ -1,0 +1,3 @@
+var cube = ccbGetSceneNodeFromName("Terrain1"); // this needs to be the name of your object to which you want to apply the external tex
+var tex = ccbLoadTexture("put address of your external texture here")// noter the adress usese "\" instead of "/" make sure to change it accordingly
+ccbSetSceneNodeMaterialProperty(cube,0,"Texture1",tex);
