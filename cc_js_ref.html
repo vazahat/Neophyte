@@ -11,9 +11,9 @@
   
   
   <title>CopperCube JavaScript API reference</title>
-  <link rel="stylesheet" href="assets/gov-icons/css/govicons.min.css">
   <link rel="stylesheet" href="assets/font-awesome-solid/../css/fontawesome.min.css">
   <link rel="stylesheet" href="assets/font-awesome-solid/css/solid.min.css">
+  <link rel="stylesheet" href="assets/gov-icons/css/govicons.min.css">
   <link rel="stylesheet" href="assets/dev-icons/css/devicon.min.css">
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -634,7 +634,7 @@ print(font);
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbGetSceneNodeProperty" id="ccbGetSceneNodeProperty"></a><cmd style=""><strong>ccbSetSceneNodeProperty(</strong>Node, "PropertyName", Value<strong>)</strong></cmd></p>
+	<p><a name="ccbSetSceneNodeProperty" id="ccbSetSceneNodeProperty"></a><cmd style=""><strong>ccbSetSceneNodeProperty(</strong>Node, "PropertyName", Value<strong>)</strong></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(Node)</strong> - Scene node whose property needs to be changed.</par><br><par><strong>("PropertyName") </strong>- String for the name of the property of a scene node that need to be set, for example "Position".</par><br><par><strong>(Value)</strong> - Value can be a bool, integer, float, string, and vector.&nbsp; Properties like&nbsp; Color, Position, Rotation and Scale are generally vectors &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and contains 3 values like (x,y,z) here x,y and z can be floats or integers.&nbsp;&nbsp;</par></p>
@@ -677,9 +677,12 @@ var s = ccbGetSceneNodeFromName("cubeMesh1");
       <tbody>
         <tr>
           <td>
-            <pre><code class="language-javascript"><p>// get the node with the name "cubeMesh1" and store it in a variable called s<br>var s = ccbGetSceneNodeFromName("cubeMesh1");<br><br>//Get the current Scale of the scenenode and store in a variable<br>var currentScale = ccbGetSceneNodeProperty(s,"Scale");<br><br>//multiply the X,Y and Z axis of the currentScale by 2 to double the size of the node
-            
-ccbSetSceneNodeProperty(s,"Scale", currentScale.x*2, currentScale.y*2, currentScale.z*2);<br></p></code></pre>
+            <pre><code class="language-javascript"><p>// get the node with the name "cubeMesh1" and store it in a variable called s<br>
+            var s = ccbGetSceneNodeFromName("cubeMesh1");<br>
+        <br>//Get the current Scale of the scenenode and store in a variable
+        <br>var currentScale = ccbGetSceneNodeProperty(s,"Scale");<br>
+        <br>//multiply the X,Y and Z axis of the currentScale by 2 to double the size of the node
+            ccbSetSceneNodeProperty(s,"Scale", currentScale.x*2, currentScale.y*2, currentScale.z*2);<br></p></code></pre>
          </td>
         </tr>
         <tr>
@@ -699,7 +702,7 @@ ccbSetSceneNodeProperty(s,"Scale", currentScale.x*2, currentScale.y*2, currentSc
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbGetSceneNodeChildCount" id="ccbGetSceneNodeChildCount"></a><cmd style=""><strong>ccbGetSceneNodeMaterialCount(</strong>Node<strong>)</strong></cmd></p>
+	<p><a name="ccbGetSceneNodeMaterialCount" id="ccbGetSceneNodeMaterialCount"></a><cmd style=""><strong>ccbGetSceneNodeMaterialCount(</strong>Node<strong>)</strong></cmd></p>
 
   <blockquote>   
     <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(Node)</strong> - Scene node whose materials need to be counted.</par></p>
@@ -736,7 +739,7 @@ print("the scene node has " + n + " materials");
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbGetSceneNodeChildCount" id="ccbGetSceneNodeChildCount"></a><cmd style=""><strong>ccbRemoveSceneNode(</strong>Node<strong>)</strong></cmd></p>
+	<p><a name="ccbRemoveSceneNode" id="ccbRemoveSceneNode"></a><cmd style=""><strong>ccbRemoveSceneNode(</strong>Node<strong>)</strong></cmd></p>
 
   <blockquote>   
     <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(Node)</strong> - Scene node that needs to be removed.</par></p>
@@ -773,7 +776,7 @@ ccbRemoveSceneNode(s);
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><cmd style=""><strong>ccbSetSceneNodeParent(</strong>Node, ParentSceneNode<strong>)</strong></cmd><a name="ccbGetChildSceneNode" id="ccbGetChildSceneNode"></a></p>
+	<p><cmd style=""><strong>ccbSetSceneNodeParent(</strong>Node, ParentSceneNode<strong>)</strong></cmd><a name="ccbSetSceneNodeParent" id="ccbSetSceneNodeParent"></a></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(Node)</strong> - Scene node whose parent needs to be updated.</par><br><par><strong>(ParentSceneNode)&nbsp;</strong>- Scene node that should be used as a parent for the Node.</par></p>
@@ -826,7 +829,7 @@ ccbSetSceneNodeParent(s, root);<br></p></code></pre>
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbGetSceneNodeChildCount" id="ccbGetSceneNodeChildCount"></a><cmd style=""><strong>ccbSetSceneNodePositionWithoutCollision(</strong>Node, X, Y, Z<strong>)</strong></cmd></p>
+	<p><a name="ccbSetSceneNodePositionWithoutCollision" id="ccbSetSceneNodePositionWithoutCollision"></a><cmd style=""><strong>ccbSetSceneNodePositionWithoutCollision(</strong>Node, X, Y, Z<strong>)</strong></cmd></p>
 
   <blockquote>   
     <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(Node)</strong> - Scene node whose position need to be changed.</par><br><par><strong>(X)</strong> - New Position for the X-Coordinate.</par><br><par><strong>(Y)</strong> -&nbsp;New Position for the Y-Coordinate.</par><br><par><strong>(Z)</strong> -&nbsp;New Position for the Z-Coordinate.</par></p>
@@ -862,7 +865,7 @@ ccbSetSceneNodePositionWithoutCollision(s, -20, 10, -40);
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbRegisterKeyDownEvent(</strong>"Function"<strong>)</strong></cmd></p>
+	<p><a name="ccbRegisterKeyDownEvent" id="ccbRegisterKeyDownEvent"></a><cmd style=""><strong>ccbRegisterKeyDownEvent(</strong>"Function"<strong>)</strong></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor, and only in the Windows and Mac OS X app target. For getting key events, use the behavior functions "behaviorName.prototype.onKeyEvent()".</note></p>
@@ -907,7 +910,7 @@ ccbRegisterKeyDownEvent("keyPressedDown");
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbRegisterKeyUpEvent(</strong>"Function"<strong>)</strong></cmd></p>
+	<p><a name="ccbRegisterKeyUpEvent" id="ccbRegisterKeyUpEvent"></a><cmd style=""><strong>ccbRegisterKeyUpEvent(</strong>"Function"<strong>)</strong></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor, and only in the Windows and Mac OS X app target. For getting key events, use the behavior functions "behaviorName.prototype.onKeyEvent()".</note></p>
@@ -952,7 +955,7 @@ ccbRegisterKeyUpEvent("keyLeftUp");
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbRegisterMouseDownEvent(</strong>"Function"<strong>)</strong></cmd></p>
+	<p><a name="ccbRegisterMouseDownEvent" id="ccbRegisterMouseDownEvent"></a><cmd style=""><strong>ccbRegisterMouseDownEvent(</strong>"Function"<strong>)</strong></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor, and only in the Windows and Mac OS X app target. For getting mouse events, use the behavior functions "behaviorName.prototype.onMouseEvent()".</note></p>
@@ -997,7 +1000,7 @@ ccbRegisterMouseDownEvent("mousePressedDown");
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbRegisterMouseUpEvent(</strong>"Function"<strong>)</strong></cmd></p>
+	<p><a name="ccbRegisterMouseUpEvent" id="ccbRegisterMouseUpEvent"></a><cmd style=""><strong>ccbRegisterMouseUpEvent(</strong>"Function"<strong>)</strong></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor, and only in the Windows and Mac OS X app target. For getting mouse events, use the behavior functions "behaviorName.prototype.onMouseEvent()".</note></p>
@@ -1042,7 +1045,7 @@ ccbRegisterMouseUpEvent("mouseLeftUp");
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbRegisterOnFrameEvent(</strong>Function<strong>)</strong></cmd><strong><br></strong><cmd style=""><strong>ccbUnregisterOnFrameEvent(</strong>Function<strong>)</strong><br></cmd></p>
+	<p><a name="ccbRegisterOnFrameEvent" id="ccbRegisterOnFrameEvent"></a><cmd style=""><strong>ccbRegisterOnFrameEvent(</strong>Function<strong>)</strong></cmd><strong><br></strong><cmd style=""><strong>ccbUnregisterOnFrameEvent(</strong>Function<strong>)</strong><br></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> These functions are not available in the editor.</note></p>
@@ -1108,7 +1111,7 @@ ccbUnregisterOnFrameEvent(onFrameDrawing);</p></code></pre>
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbDrawColoredRectangle(</strong>Color, X1, Y1, X2, Y2<strong>)</strong></cmd></p>
+	<p><a name="ccbDrawColoredRectangle" id="ccbDrawColoredRectangle"></a><cmd style=""><strong>ccbDrawColoredRectangle(</strong>Color, X1, Y1, X2, Y2<strong>)</strong></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor. This function can only be used inside an "on frame" event function which must have been registered with ccbRegisterOnFrameEvent().</note></p>
@@ -1164,7 +1167,7 @@ ccbRegisterOnFrameEvent(onFrameDrawing);
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbDrawTextureRectangle(</strong>"File", X1, Y1, X2, Y2<strong>)</strong></cmd></p>
+	<p><a name="ccbDrawTextureRectangle" id="ccbDrawTextureRectangle"></a><cmd style=""><strong>ccbDrawTextureRectangle(</strong>"File", X1, Y1, X2, Y2<strong>)</strong></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor. This function can only be used inside an "on frame" event function which must have been registered with ccbRegisterOnFrameEvent().</note></p>
@@ -1218,7 +1221,7 @@ ccbRegisterOnFrameEvent(onFrameDrawing);
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbDrawTextureRectangleWithAlpha(</strong>"File", X1, Y1, X2, Y2<strong>)</strong></cmd></p>
+	<p><a name="ccbDrawTextureRectangleWithAlpha" id="ccbDrawTextureRectangleWithAlpha"></a><cmd style=""><strong>ccbDrawTextureRectangleWithAlpha(</strong>"File", X1, Y1, X2, Y2<strong>)</strong></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor. This function can only be used inside an "on frame" event function which must have been registered with ccbRegisterOnFrameEvent().</note></p>
@@ -1277,7 +1280,7 @@ ccbSetCursorVisible(false); //Hide the default cursor
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbGetSceneNodeChildCount" id="ccbGetSceneNodeChildCount"></a><cmd style=""><strong>ccbGet3DPosFrom2DPos(</strong>X, Y<strong>)</strong></cmd></p>
+	<p><a name="ccbGet3DPosFrom2DPos" id="ccbGet3DPosFrom2DPos"></a><cmd style=""><strong>ccbGet3DPosFrom2DPos(</strong>X, Y<strong>)</strong></cmd></p>
 
   <blockquote>   
     <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(X)</strong> - 2D position on screen for X-Coordinate.</par><br><par><strong>(Y)</strong> -&nbsp;2D position on screen for Y-Coordinate.</par></p>
@@ -1318,7 +1321,7 @@ ccbSetSceneNodeProperty(s, "Position", pos3d);
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbGetSceneNodeChildCount" id="ccbGetSceneNodeChildCount"></a><cmd style=""><strong>ccbGet2DPosFrom3DPos(</strong>X, Y, Z<strong>)</strong></cmd></p>
+	<p><a name="ccbGet2DPosFrom3DPos" id="ccbGet2DPosFrom3DPos"></a><cmd style=""><strong>ccbGet2DPosFrom3DPos(</strong>X, Y, Z<strong>)</strong></cmd></p>
 
   <blockquote>   
     <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(X)</strong> - 3D position for X-Coordinate.</par><br><par><strong>(Y)</strong> - 3D position for Y-Coordinate.</par><br><par><strong>(Z)</strong> - 3D position for Z-Coordinate.<br></par></p>
@@ -1331,7 +1334,9 @@ ccbSetSceneNodeProperty(s, "Position", pos3d);
           <tr>
             <td bgcolor="#E2E2E2">
 <pre><code class="language-javascript"><p>var pos = ccbGet2DPosFrom3DPos(20, 30, 30);
-print("Position on screen: " + pos);<br><br>//prints the position of X and Y as 2D position the Z position will always be zero.<br>//The returned position is camera dependent so won't give you a fixed result</p>
+print("Position on screen: " + pos);
+//prints the position of X and Y as 2D position the Z position will always be zero.
+//The returned position is camera dependent so won't give you a fixed result</p>
 </code></pre>
             </td>
           </tr>  
@@ -1353,7 +1358,7 @@ print("Position on screen: " + pos);<br><br>//prints the position of X and Y as 
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbGetSceneNodeChildCount" id="ccbGetSceneNodeChildCount"></a><cmd style=""><strong>ccbGetCollisionPointOfWorldWithLine(</strong>StartX, StartY, StartZ, EndX, EndY, EndZ<strong>)</strong></cmd></p>
+	<p><a name="ccbGetCollisionPointOfWorldWithLine" id="ccbGetCollisionPointOfWorldWithLine"></a><cmd style=""><strong>ccbGetCollisionPointOfWorldWithLine(</strong>StartX, StartY, StartZ, EndX, EndY, EndZ<strong>)</strong></cmd></p>
 
   <blockquote>   
     <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:<br></strong><par><strong>(StartX)</strong> - Starting position of the line on X-Coordinate.</par><br><par><strong>(StartY)</strong> - Starting position of the line on Y-Coordinate.</par><br><par><strong>(StartZ)</strong> - Starting position of the line on Z-Coordinate.
@@ -1371,12 +1376,17 @@ print("Position on screen: " + pos);<br><br>//prints the position of X and Y as 
 <pre><code class="language-javascript"><p></p><p>function onFrameDrawing()
 <br>{
 
-&nbsp; var mouseX = ccbGetMousePosX();<br>  var mouseY = ccbGetMousePosY();
-<br>  // test collision by drawing a line from camera to the mouse position
-<br>  var startPoint = ccbGetSceneNodeProperty(ccbGetActiveCamera(), "Position"); // get camera position<br>  var endPoint = ccbGet3DPosFrom2DPos(mouseX, mouseY); // Convert mouse position into 3d position
-<br> &nbsp;var collisionPoint = ccbGetCollisionPointOfWorldWithLine(startPoint.x, startPoint.y, </p><p>  startPoint.z, endPoint.x, endPoint.y, endPoint.z);</p><p>&nbsp;&nbsp;<span style="font-size: inherit;">if (collisionPoint != null</span><span style="font-size: inherit;">) //checks if Collision happens or not</span></p><p>   {
+&nbsp; var mouseX = ccbGetMousePosX();
+       var mouseY = ccbGetMousePosY();
+       // test collision by drawing a line from camera to the mouse position
+       var startPoint = ccbGetSceneNodeProperty(ccbGetActiveCamera(), "Position"); // get camera position
+       var endPoint = ccbGet3DPosFrom2DPos(mouseX, mouseY); // Convert mouse position into 3d position
+<br> &nbsp;var collisionPoint = ccbGetCollisionPointOfWorldWithLine(startPoint.x, startPoint.y, </p><p>  startPoint.z, endPoint.x, endPoint.y, endPoint.z);</p><p>&nbsp;&nbsp;<span style="font-size: inherit;">
+if (collisionPoint != null</span><span style="font-size: inherit;">) //checks if Collision happens or not</span></p><p>   {
 <br>     print("The casted line collides with something at position :- " + collisionPoint);
-<br>   }</p><p>&nbsp; else { <span style="font-size: inherit;">print("The casted line doesn't collides with anything");}</span></p><p>}</p><p>ccbRegisterOnFrameEvent(onFrameDrawing);</p><p>//Prints the collision point if collision occurs of a line casted from camera towards the mouse position.</p><p></p>
+<br>   }</p><p>&nbsp; else { <span style="font-size: inherit;">print("The casted line doesn't collides with anything");}</span></p><p>}</p>
+<p>
+ccbRegisterOnFrameEvent(onFrameDrawing);</p><p>//Prints the collision point if collision occurs of a line casted from camera towards the mouse position.</p><p></p>
 </code></pre>
             </td>
           </tr>  
@@ -1398,7 +1408,7 @@ print("Position on screen: " + pos);<br><br>//prints the position of X and Y as 
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbGetSceneNodeChildCount" id="ccbGetSceneNodeChildCount"></a><cmd style=""><strong>ccbDoesLineCollideWithBoundingBoxOfSceneNode(</strong>Node,<strong>&nbsp;</strong>StartX, StartY, StartZ, EndX, EndY, EndZ<strong>)</strong></cmd></p>
+	<p><a name="ccbDoesLineCollideWithBoundingBoxOfSceneNode" id="ccbDoesLineCollideWithBoundingBoxOfSceneNode"></a><cmd style=""><strong>ccbDoesLineCollideWithBoundingBoxOfSceneNode(</strong>Node,<strong>&nbsp;</strong>StartX, StartY, StartZ, EndX, EndY, EndZ<strong>)</strong></cmd></p>
 
   <blockquote>   
     <p class="mbr-text mbr-fonts-style mb-3"><strong>Parameters:</strong><br><par><strong>(Node)</strong> - Node whose bounding box needs to be checked for collision.</par><br><par><strong>(StartX)</strong> - Starting position of the line on X-Coordinate.</par><br><par><strong>(StartY)</strong> - Starting position of the line on Y-Coordinate.</par><br><par><strong>(StartZ)</strong> - Starting position of the line on Z-Coordinate.
@@ -1455,7 +1465,7 @@ ccbRegisterOnFrameEvent(onFrameDrawing);
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbEndProgram()</strong></cmd></p>
+	<p><a name="ccbEndProgram" id="ccbEndProgram"></a><cmd style=""><strong>ccbEndProgram()</strong></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
@@ -1493,7 +1503,7 @@ ccbRegisterOnFrameEvent(onFrameDrawing);
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbGetMousePosX()</strong></cmd></p>
+	<p><a name="ccbGetMousePosX" id="ccbGetMousePosX"></a><cmd style=""><strong>ccbGetMousePosX()</strong></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
@@ -1533,7 +1543,7 @@ ccbRegisterOnFrameEvent(onFrameDrawing);
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbGetMousePosX()</strong></cmd></p>
+	<p><a name="ccbGetMousePosY" id="ccbGetMousePosY"></a><cmd style=""><strong>ccbGetMousePosY()</strong></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
@@ -1581,7 +1591,7 @@ ccbRegisterOnFrameEvent(onFrameDrawing);
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbSetMousePos(</strong>X, Y<strong>)</strong></cmd></p>
+	<p><a name="ccbSetMousePos" id="ccbSetMousePos"></a><cmd style=""><strong>ccbSetMousePos(</strong>X, Y<strong>)</strong></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong>&nbsp;This function is not available in the editor. This function is only available in the Windows .exe and macOS .app target.</note></p>
@@ -1595,7 +1605,8 @@ ccbRegisterOnFrameEvent(onFrameDrawing);
         <tbody>
           <tr>
             <td bgcolor="#E2E2E2">
-<pre><code class="language-javascript"><p>var screenY = ccbGetScreenHeight();<br>var screenX = ccbGetScreenWidth();
+<pre><code class="language-javascript"><p>var screenY = ccbGetScreenHeight();
+<br>var screenX = ccbGetScreenWidth();
 <br>ccbSetMousePos(screenX/4,screenY/4);<br><br>//put mouse cursor in the 1/4th part of the screen<br></p>
 </code></pre>
             </td>
@@ -1618,7 +1629,7 @@ ccbRegisterOnFrameEvent(onFrameDrawing);
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbGetScreenWidth()</strong></cmd></p>
+	<p><a name="ccbGetScreenWidth" id="ccbGetScreenWidth"></a><cmd style=""><strong>ccbGetScreenWidth()</strong></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
@@ -1657,7 +1668,7 @@ ccbRegisterOnFrameEvent(onFrameDrawing);
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbGetScreenHeight()</strong></cmd></p>
+	<p><a name="ccbGetScreenHeight" id="ccbGetScreenHeight"></a><cmd style=""><strong>ccbGetScreenHeight()</strong></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
@@ -1696,7 +1707,7 @@ ccbRegisterOnFrameEvent(onFrameDrawing);
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbSetCursorVisible(</strong>true/false<strong>)</strong></cmd></p>
+	<p><a name="ccbSetCursorVisible" id="ccbSetCursorVisible"></a><cmd style=""><strong>ccbSetCursorVisible(</strong>true/false<strong>)</strong></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong>&nbsp;This function may not do anything depending on the target it runs on (web apps for example have no access to the cursor). This function is not available in the editor.</note></p>
@@ -1732,7 +1743,7 @@ ccbRegisterOnFrameEvent(onFrameDrawing);
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbSwitchToScene(</strong>"SceneName"<strong>)</strong></cmd></p>
+	<p><a name="ccbSwitchToScene" id="ccbSwitchToScene"></a><cmd style=""><strong>ccbSwitchToScene(</strong>"SceneName"<strong>)</strong></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
@@ -1769,7 +1780,7 @@ ccbRegisterOnFrameEvent(onFrameDrawing);
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbSetCopperCubeVariable(</strong>"VariabaleName", VariableValue<strong>)</strong></cmd></p>
+	<p><a name="ccbSetCopperCubeVariable" id="ccbSetCopperCubeVariable"></a><cmd style=""><strong>ccbSetCopperCubeVariable(</strong>"VariabaleName", VariableValue<strong>)</strong></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
@@ -1798,11 +1809,11 @@ ccbRegisterOnFrameEvent(onFrameDrawing);
       <tbody>
         <tr>
           <td>
-            <pre><code class="language-javascript"><p>ccbSetCopperCubeVariable("Website", "Neophyte.cf");<br><br></p></code></pre>
+            <pre><code class="language-javascript"><p>ccbSetCopperCubeVariable("Website", "vazahat.github.io");<br><br></p></code></pre>
          </td>
         </tr>
         <tr>
-          <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:&nbsp;</strong>Above example will create and set a CopperCube variable with name "website" having a value "Neophyte.cf".</p></th>
+          <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:&nbsp;</strong>Above example will create and set a CopperCube variable with name "website" having a value "vazahat.github.io".</p></th>
         </tr>
       </tbody>
     </table>
@@ -1818,7 +1829,7 @@ ccbRegisterOnFrameEvent(onFrameDrawing);
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbGetCopperCubeVariable(</strong>"VariabaleName"<strong>)</strong></cmd></p>
+	<p><a name="ccbGetCopperCubeVariable" id="ccbGetCopperCubeVariable"></a><cmd style=""><strong>ccbGetCopperCubeVariable(</strong>"VariabaleName"<strong>)</strong></cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function is not available in the editor.</note></p>
@@ -1832,13 +1843,14 @@ ccbRegisterOnFrameEvent(onFrameDrawing);
         <tbody>
           <tr>
             <td bgcolor="#E2E2E2">
-<pre><code class="language-javascript"><p>var websiteName = ccbGetCopperCubeVariable("Website");<br><br>print(websiteName);</p>
+<pre><code class="language-javascript"><p>var websiteName = ccbGetCopperCubeVariable("Website");
+<br><br>print(websiteName);</p>
 </code></pre>
             </td>
           </tr>  
 
         <tr>
-         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will print the value of the CopperCube variable "Website", and if the variable don't exist , it will print 0 in the debug console. If you initially set the variable using the example in ccbSetCopperCubeVariable command then it will print the name of this website as "Neophyte.cf".</p></th>
+         <th><p class="mbr-text mbr-fonts-style mb-3"><strong>Result:</strong> Above example will print the value of the CopperCube variable "Website", and if the variable don't exist , it will print 0 in the debug console. If you initially set the variable using the example in ccbSetCopperCubeVariable command then it will print the name of this website as "vazahat.github.io".</p></th>
         </tr>
       </tbody>
     </table>
@@ -1854,7 +1866,7 @@ ccbRegisterOnFrameEvent(onFrameDrawing);
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbWriteFileContent</strong>("FileName", "Content")</cmd></p>
+	<p><a name="ccbWriteFileContent" id="ccbWriteFileContent"></a><cmd style=""><strong>ccbWriteFileContent</strong>("FileName", "Content")</cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function may not do anything depending on the target it runs on (websites for example have no access to the file system).</note></p>
@@ -1868,7 +1880,7 @@ ccbRegisterOnFrameEvent(onFrameDrawing);
         <tbody>
           <tr>
             <td bgcolor="#E2E2E2">
-<pre><code class="language-javascript"><p>var text = "Neophyte.cf is a website that deal with Coppercube related stuff";
+<pre><code class="language-javascript"><p>var text = "Neophyte is a website that deal with Coppercube related stuff";
 ccbWriteFileContent("Example.txt", text) ; //creates a text file
 </p>
 </code></pre>
@@ -1892,7 +1904,7 @@ ccbWriteFileContent("Example.txt", text) ; //creates a text file
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbReadFileContent</strong>("FileName")</cmd></p>
+	<p><a name="ccbReadFileContent" id="ccbReadFileContent"></a><cmd style=""><strong>ccbReadFileContent</strong>("FileName")</cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function may not do anything depending on the target it runs on (websites for example have no access to the file system).</note></p>
@@ -1930,7 +1942,7 @@ print(text);
 
 <!-- Place your own code below -->
 <div class="container">
-	<p><a name="ccbCloneSceneNode" id="ccbCloneSceneNode"></a><cmd style=""><strong>ccbFileExist</strong>("FileName")</cmd></p>
+	<p><a name="ccbFileExist" id="ccbFileExist"></a><cmd style=""><strong>ccbFileExist</strong>("FileName")</cmd></p>
 
   <blockquote>
     <p class="mbr-text mbr-fonts-style mb-3"><note><strong>Note:</strong> This function may not do anything depending on the target it runs on (websites for example have no access to the file system).</note></p>
